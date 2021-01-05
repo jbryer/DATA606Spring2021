@@ -8,8 +8,8 @@ weight: 40
 
 We will make use of [R](http://r-project.org), an open source statistics program and language. Be sure to [install R](http://cran.r-project.org/) and [RStudio](http://rstudio.com) on your own computers within the first few days of the class.
 
-* R - [Windows](http://cran.r-project.org/bin/windows/base/) or [Mac](http://cran.r-project.org/bin/macosx/)
-* RStudio - [Download Windows or Mac version from here](http://www.rstudio.com/products/rstudio/download/)
+* R - download for [Windows](http://cran.r-project.org/bin/windows/base/), [Mac](http://cran.r-project.org/bin/macosx/), or [Linux](https://cran.r-project.org).
+* RStudio - [Download Windows, Mac, or Linux versions from here](https://rstudio.com/products/rstudio/download/#download)
 
 If using Windows, you also need to download [RTools](http://cran.r-project.org/bin/windows/Rtools/) and [ActivePerl](https://www.activestate.com/products/activeperl/downloads/).
 

@@ -83,7 +83,6 @@ ics.file <- paste0('../../', outDir, '/Course_Calendar.ics')
 createICS(meetups) %>% write(file = ics.file)
 ```
 
-[Click here to import the course calendar into your calendar application](/Course_Calendar.ics)
 
 [CUNY SPS Academic Calendar](https://sps.cuny.edu/academics/academic-calendar)
 
@@ -145,3 +144,6 @@ topics$Start <- format(topics$Start, format = '%A, %B %d, %Y')
 topics$End <- format(topics$End, format = '%A, %B %d, %Y')
 knitr::kable(topics)
 ```
+
+[Click here to import the course calendar into your calendar application](/Course_Calendar.ics)
+

@@ -17,6 +17,8 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
+
+
 [params]
 
     # Description of course appears under title (optional)
@@ -89,7 +91,7 @@ enableMissingTranslationPlaceholders = false
 
     [[menu.main]]
         name = "Slack"
-        url = ""
+        url = "https://data606spring2021.slack.com"
         weight = 5
 
     [[menu.main]]

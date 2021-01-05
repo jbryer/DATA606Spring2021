@@ -51,24 +51,27 @@ A little about me:
 
 ## Syllabus
 
-Syllabus and course materials are here: [https://fall2020.data606.net](https://fall2020.data606.net)
+Syllabus and course materials are here: [https://spring2021.data606.net](https://spring2021.data606.net)
 
-The site is built using the [Blogdown](https://bookdown.org/yihui/blogdown/) R package and hosted on [Github](https://github.com/jbryer/DATA606Fall2020). Each page of the site has a "Improve this page" link at the bottom right, use that to start a pull request on Github.
+The site is built using the [Blogdown](https://bookdown.org/yihui/blogdown/) R package and hosted on [Github](https://github.com/jbryer/DATA606Spring2021). Each page of the site has a "Improve this page" link at the bottom right, use that to start a pull request on Github.
 
 We will use Blackboard primary only for submitting assignments. Please submit:
 
 * A PDF or link to the built HTML (e.g. Rpubs, [Github](http://htmlpreview.github.io/))
 
 PDFs are preferred for the homework as there is some LaTeX formatting in the R markdown files. The `tineytex` R package helps with install LaTeX, but you can also install LaTeX using ([MiKTeX](http://miktex.org) (for Windows) and [BasicTeX](http://www.tug.org/mactex/morepackages.html) (for Mac) See this page for more information: 
-https://fall2020.data606.net/course-overview/software/
+https://spring2021.data606.net/course-overview/software/
 
 ## Meetups
 
 We will have meetups on Wednesday evenings at 8:30pm. 
 
-Meetups will be recorded and made available the next day on the [course website](https://fall2020.data606.net/course-overview/meetups/).
+Meetups will be recorded and made available the next day on the [course website](https://spring2021.data606.net/course-overview/meetups/).
 
-Though attendance is not strictly required, I expect everyone to watch them at during the week. I use the meetups to convey important information and announcements. Students who attend the meetups tend to do well on the assignments.
+Though attending live is not strictly required, **I expect everyone to watch them at during the week.** I use the meetups to convey important information and announcements. Students who attend the meetups tend to do well on the assignments.
+
+**One Minute Papers** - After each Meetup (whether you watch live or watch the recordings). It should take approximately one to two minutes to complete. This allows me to 1) verify you have attended/watch the meetup and 2) get feedback about what you learned and what you may still be unclear.  
+Link: https://forms.gle/gY9SeBCPggHEtZYw6
 
 **Please note:** *Students who participate in this class with their camera on or use a profile image are agreeing to have their video or image recorded solely for the purpose of creating a record for students enrolled in the class to refer to, including those enrolled students who are unable to attend live.  If you are unwilling to consent to have your profile or video image recorded, be sure to keep your camera off and do not use a profile image. Likewise, students who un-mute during class and participate orally are agreeing to have their voices recorded.  If you are not willing to consent to have your voice recorded during class, you will need to keep your mute button activated and communicate exclusively using the "chat" feature, which allows students to type questions and comments live.*
 
@@ -143,26 +146,26 @@ knitr::kable(topics)
 
 ## Assignments
 
-* [DAACS](https://fall2020.data606.net/assignments/daacs) (5%)
-* [Homework](https://fall2020.data606.net/assignments/homework) (20%)
-* [Labs](https://fall2020.data606.net/assignments/labs) (40%)
+* [DAACS](https://spring2021.data606.net/assignments/daacs) (5%)
+* [Homework](https://spring2021.data606.net/assignments/homework) (20%)
+* [Labs](https://spring2021.data606.net/assignments/labs) (40%)
 	* Labs are designed to introduce to you doing statistics with R.
 	* Answer the questions in the main text as well as the "On Your Own" section.
-* [Data Project](https://fall2020.data606.net/assignments/project) (15%)
+* [Data Project](https://spring2021.data606.net/assignments/project) (15%)
 	* This allows you to analyze a dataset of your choosing. Projects will be shared with the class. This provides an opportunity for everyone to see different approaches to analyzing different datasets.
 	* Proposal is due October 25th (5%); Final project is due December 9th (15%).
-* [Final exam](https://fall2020.data606.net/assignments/final/) (15%)
-* [Meetup Presentation](https://fall2020.data606.net/assignments/presentation) (5%)
-	* Present one practice problem during our weekly meetups. Signup using the [Google Spreadsheet](https://fall2020.data606.net/course-overview/meetups).
+* [Final exam](https://spring2021.data606.net/assignments/final/) (15%)
+* [Meetup Presentation](https://spring2021.data606.net/assignments/presentation) (5%)
+	* Present one practice problem during our weekly meetups. Signup using the [Google Spreadsheet](https://spring2021.data606.net/course-overview/meetups).
 	* **Please select odd number questions only!**
 
 
 ## Communication
 
-* Slack Channel: https://data606fall2020.slack.com
-	* [Click here to join the group](https://join.slack.com/t/data606fall2020/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA)
-* There is a general CUNY MSDS Slack channel [click here](https://join.slack.com/t/data606fall2020/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA) to join it.
-* Github Issues - Use this for issues or problems with the course or `DATA606` package: https://github.com/jbryer/DATA606Fall2020/issues
+* Slack Channel: https://data606spring2021.slack.com
+	* [Click here to join the group](https://join.slack.com/t/data606spring2021/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA)
+* There is a general CUNY MSDS Slack channel [click here](https://join.slack.com/t/data606spring2021/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA) to join it.
+* Github Issues - Use this for issues or problems with the course or `DATA606` package: https://github.com/jbryer/DATA606spring2021/issues
 * Email: jason.bryer@sps.cuny.edu
 * Phone/GoToMeeting: Please email to schedule a time to meet.
 * Office hours will typically be:
