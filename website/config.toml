@@ -1,6 +1,6 @@
 baseURL = "/"
 
-title = "DATA 606 - Spring 2021"
+title = "DATA 606 - Statistics & Probability - Spring 2021"
 
 # This is the default directory for Github Pages
 publishDir = "../docs/"
@@ -31,7 +31,10 @@ enableMissingTranslationPlaceholders = false
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
-    github_doc_repository = "https://github.com/jbryer/DATA606Spring2021/website"
+    github_doc_repository = "https://github.com/jbryer/DATA606Spring2021"
+    # If the website is in the root of the repository then leave this blank,
+    # otherwise specify subdirectory where the Hugo source is located
+    github_doc_repository_directory = "website/"
 
     # Analytic section
     google_analytics_id = "" # Your Google Analytics tracking id
