@@ -100,6 +100,11 @@ enableMissingTranslationPlaceholders = false
         weight = 20
 
     [[menu.main]]
+        name = "Github"
+        url = "https://github.com/jbryer/DATA606Spring2021/"
+        weight = 25
+
+    [[menu.main]]
         name = "CUNY SPS"
         url = "https://sps.cuny.edu/academics/graduate/master-science-data-science-ms"
         weight = 30

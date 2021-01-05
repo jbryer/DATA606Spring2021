@@ -1,7 +1,7 @@
 DATAA 606 Spring 2021
 ================
 
-<a href='https://spring2021.data606.net'><img src='website/static/images/course_logo.png' align="right" height="138.5" /></a>
+<a href='https://spring2021.data606.net'><img src='website/static/images/course_logo.png' align="right" height="200" /></a>
 
 ## Course Website
 
@@ -94,6 +94,17 @@ Specify links in the `config.toml`. Look for the `[menu]` section of the
 configuration file for details. 2. Include `menu: "main"` in the YAML of
 any markdown file you wish to have linked in the navigation bar. The
 Meetup page is included in the navigation bar by default.
+
+#### Announcements / Posts
+
+You can create announcements (blog posts) in the `website/content/blog/`
+folder. There is an exmaple Rmarkdown file there that you can use as a
+template. By default the site is configured to show the full post on the
+homepage. If you wish to show only the summary (e.g. if your posts are
+long) you can change that option in the
+`website/themes/hugo-theme-techdoc/layouts/blog/summary.html` file. Note
+the comment in that file indicating where `.Content` option can be
+changed to `.Summary`.
 
 #### Building and Deploying the Site
 
