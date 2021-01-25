@@ -50,21 +50,32 @@ hexes <- function(x) {
 ```
 
 
+class: hide-logo, bottom, right, title-slide
+background-image: url(images/Greetings_from_Statistics.jpeg)
+background-size: contain
+
+.font70[
+
+[@skyetetra](https://twitter.com/ChelseaParlett/status/1340463322118856705)
+
+]
+
+---
 # Agenda
 
-* Introduction
-	* Syllabus
-	* Class meetups
-	* Course Schedule
-	* Assignments (how you will be graded)
-		* Participation
-		* Homework
-		* Labs
-		* Data Project
-		* Final exam
-	* Software
-		* The `DATA606` R Package
-		* Using R Markdown
+* About your instructor
+* Syllabus
+* Class meetups
+* Course Schedule
+* Assignments (how you will be graded)
+	* Participation
+	* Homework
+	* Labs
+	* Data Project
+	* Final exam
+* Software
+	* The `DATA606` R Package
+	* Using R Markdown
 
 ---
 
@@ -109,6 +120,7 @@ knitr::include_graphics('images/BoysFall2019.jpg')
 ```{r, out.width='80%', fig.align='center', echo=FALSE}
 knitr::include_graphics('images/Sleeping_Empire.jpg')
 ```
+
 
 ---
 
@@ -217,6 +229,39 @@ knitr::kable(topics, format = 'html')
 
 ---
 
+# Textbooks
+
+.pull-left[
+
+Diez, D.M., Barr, C.D., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics (4th Ed)*.
+
+.font70[
+
+This will be our primary textbook for most of the semesters. Our goal is to cover all the chapters.
+
+
+]
+
+<a href = "https://github.com/jbryer/DATA606Spring2021/blob/master/Resources/Textbooks/os4.pdf"><img src = 'images/openintro.jpeg' alt = 'Open Intro Statistics' height = '375px' /></a>
+
+]
+
+.pull-right[
+
+Navarro, D. (2018, version 0.6). *Learning Statistics with R*
+
+.font70[
+
+This textbooks has a chapter on Bayesian analysis that we will use at the end of the semester. 
+
+]
+
+<a href = "https://github.com/jbryer/DATA606Spring2021/blob/master/Resources/Textbooks/lsr-0.6.pdf"><img src = 'images/lsr.png' alt = 'Learning Statistics with R' height = '375px' /></a>
+
+]
+
+---
+
 # Assignments
 
 * [DAACS](https://spring2021.data606.net/assignments/daacs) (6%)
@@ -281,15 +326,32 @@ DATA606::startLab('Lab1')
 
 This will copy the R markdown file and any supporting files to your current working directory. Use the "Knit" button in R Studio to build a PDF of the document.
 
+---
+# Next steps...
+
+Before Monday:
+
+* Complete this Google form: https://forms.gle/FGsUWy61k8A3ujYH9
+* Create an account at https://demo.daacs.net and complete the self-regulated learning assessment
+* [Join the Slack channel](https://join.slack.com/t/bryer/shared_invite/zt-kdk4bypz-x5zJS0oTypT3TEPilfy~IA)
+
+Then:
+
+* Attend the meetup on Wednesday at 8:30 pm (or watch the recording)
+* Start Lab 1
+* Start Homework 1
 
 ---
 class: inverse, right, middle, hide-logo
 
 # Good luck with the semester!
 
-[`r icon::fontawesome("twitter")` @jbryer](https://twitter.com/apreshill)  
-[`r icon::fontawesome("github")` @jbryer](https://github.com/jbryer)  
-[`r icon::fontawesome("link")` bryer.org](https://bryer.org)  
 [`r icon::fontawesome("paper-plane")` jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)  
+[`r icon::fontawesome("slack")` data606spring2021.slack.com](https://data606spring2021.slack.com)  
+[`r icon::fontawesome("github")` @jbryer](https://github.com/jbryer)  
+[`r icon::fontawesome("twitter")` @jbryer](https://twitter.com/jbryer)  
+[`r icon::fontawesome("linkedin")` @jasonbryer](https://www.linkedin.com/in/jasonbryer/)  
+[`r icon::fontawesome("link")` spring2021.data606.net](https://spring2021.data606.net)   
+[`r icon::fontawesome("link")` bryer.org](https://bryer.org)   
 
 

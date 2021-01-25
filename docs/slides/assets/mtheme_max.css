@@ -1,15 +1,3 @@
-.logo {
-  background-image: url(images/hex/DATA606.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  width: 110px;
-  height: 128px;
-  z-index: 0;
-}
-
 a, a > code {
   color: #ff0000;
   text-decoration: none;

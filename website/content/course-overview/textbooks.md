@@ -6,9 +6,13 @@ weight: 30
 
 #### Required
 
+<a href = "https://github.com/jbryer/DATA606Spring2021/blob/master/Resources/Textbooks/os4.pdf"><img src = 'images/openintro.jpeg' alt = 'Open Intro Statistics' height = '375px' /></a>
+
 Diez, D.M., Barr, C.D., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics (4th Ed).* 
 
 > This is an open source textbook and can be downloaded in PDF format [here](https://github.com/jbryer/DATA606Fall2020/blob/master/Textbook/os4.pdf?raw=true), from the [OpenIntro](http://www.openintro.org/stat/textbook.php) website, or a printed copy can be ordered from [Amazon](https://www.amazon.com/OpenIntro-Statistics-Fourth-David-Diez/dp/1943450072/ref=sr_1_2?keywords=openintro&qid=1563548071&s=gateway&sr=8-2).
+
+<a href = "https://github.com/jbryer/DATA606Spring2021/blob/master/Resources/Textbooks/lsr-0.6.pdf"><img src = 'images/lsr.png' alt = 'Learning Statistics with R' height = '375px' /></a>
 
 Navarro, D. (2018, version 0.6). *Learning Statistics with R*
 

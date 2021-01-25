@@ -188,9 +188,11 @@ Introduction to R and RStudio (Template) Introduction to Data (Template) Probabi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/course-overview/textbooks/</guid>
-      <description>Required Diez, D.M., Barr, C.D., &amp;amp; Çetinkaya-Rundel, M. (2019). OpenIntro Statistics (4th Ed).
+      <description>Required 
+Diez, D.M., Barr, C.D., &amp;amp; Çetinkaya-Rundel, M. (2019). OpenIntro Statistics (4th Ed).
  This is an open source textbook and can be downloaded in PDF format here, from the OpenIntro website, or a printed copy can be ordered from Amazon.
- Navarro, D. (2018, version 0.6). Learning Statistics with R
+ 
+Navarro, D. (2018, version 0.6). Learning Statistics with R
  This is free textbook that supplements a lot of the material covered in Diez and Barr. We will use the chapter on Bayesian analysis.</description>
     </item>
     
@@ -222,7 +224,7 @@ Occasionally you will need to type equations in homework and labs. R Markdown su
       
       <guid>/course-overview/materials/</guid>
       <description>  These are supplemental materials. Click to download.
- Classical_Machine_Learning.JPG Kruschke-Liddell2018_Article_BayesianDataAnalysisForNewcome.pdf stat_extra_interaction_effects.pdf stat_extra_nonlinear_relationships.pdf stats_handout.pdf Textbooks  lsr-0.6.pdf os4.pdf ProbStatBook.pdf Supplemental  os2_extra_inference_guide.pdf os2_prob_tables.pdf os4_tablet.pdf   what-is-data-science.pdf WhatisDataScienceFinalMay162018.pdf When to use what test.pdf  </description>
+ Classical_Machine_Learning.JPG ggplot_aesthetics_cheatsheet.png Kruschke-Liddell2018_Article_BayesianDataAnalysisForNewcome.pdf R_Syntax_Comparison.jpeg stat_extra_interaction_effects.pdf stat_extra_nonlinear_relationships.pdf stats_handout.pdf Textbooks  lsr-0.6.pdf os4.pdf ProbStatBook.pdf Supplemental  os2_extra_inference_guide.pdf os2_prob_tables.pdf os4_tablet.pdf   what-is-data-science.pdf WhatisDataScienceFinalMay162018.pdf When to use what test.pdf  </description>
     </item>
     
     <item>

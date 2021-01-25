@@ -6,6 +6,8 @@ weight: 40
 
 ### R and RStudio
 
+<img src='/slides/images/hex/RStudio.png' alt = 'RStudio' align = 'right'  style="height:250px; padding-left:10px; padding-right:10px;"/>
+
 We will make use of [R](http://r-project.org), an open source statistics program and language. Be sure to [install R](http://cran.r-project.org/) and [RStudio](http://rstudio.com) on your own computers within the first few days of the class.
 
 * R - download for [Windows](http://cran.r-project.org/bin/windows/base/), [Mac](http://cran.r-project.org/bin/macosx/), or [Linux](https://cran.r-project.org).
@@ -15,6 +17,8 @@ If using Windows, you also need to download [RTools](http://cran.r-project.org/b
 
 
 ### LaTeX
+
+<img src='/slides/images/hex/tinytex.png' alt = 'RStudio' align = 'right'  style="height:250px; padding-left:10px; padding-right:10px;"/>
 
 [LaTeX](https://www.latex-project.org/) is a typesetting language for preparing documents. Documents are written in plain text files. Formatting the document is done using specific markup. If you have used HTML, the framework is similar however instead of using `<TAG></TAG>` syntax, LaTeX uses `\TAG{}` format. We will primarily use [Markdown](https://daringfireball.net/projects/markdown/), and its extension [R Markdown](https://rmarkdown.rstudio.com/) for preparing documents in this class. However, when preparing PDF documents, the Markdown will first be converted to LaTeX before creating the PDF file. As such, a LaTeX converter is necessary. There are LaTeX installers for [Windows (MiKTeX)](http://miktex.org/) and [Mac (BasicTeX)](http://www.tug.org/mactex/morepackages.html). Alternatively, the [`tinytex`](https://yihui.name/tinytex/) R package provides an easier way of installing LaTeX directly from within R:
 

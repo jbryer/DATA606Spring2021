@@ -13,7 +13,7 @@ a, a > code {
 
 .remark-slide-content {
   background-color: #FAFAFA;
-  border-top: 80px solid #23373B;
+  border-top: 80px solid #005DAC;
   font-size: 20px;
   font-weight: 300;
   line-height: 1.5;
@@ -25,7 +25,7 @@ a, a > code {
 }
 
 .inverse {
-  background-color: #23373B;
+  background-color: #005DAC;
   text-shadow: none;
   color: #f3f3f3;
 }
