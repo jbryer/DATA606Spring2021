@@ -229,7 +229,7 @@ knitr::kable(topics, format = 'html')
 
 ---
 
-# Textbooks
+# Textbooks `r hexes(c('openintro'))`
 
 .pull-left[
 

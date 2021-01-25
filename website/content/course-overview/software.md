@@ -29,11 +29,14 @@ tinytex::install_tinytex()
 
 ### Source Control
 
+
 All course materials will be made available on [Github](https://github.com/jbryer/DATA606Fall2020/) which provides an implementation of the [git](https://git-scm.com/) open source version control system. RStudio supports git directly, but I recommend downloading [Sourcetree](https://www.sourcetreeapp.com/). This is a free desktop client that provides an easier interface for working with Github. You will also need to [create an account on Github](https://github.com/).
 
 For more information, Jenny Bryan's [*Happy Git and Github for the useR*](https://happygitwithr.com/) is a free online book covering the important features of source control for R users.
 
 ### R Packages
+
+<img src='/slides/images/hex/tidyverse.png' alt = 'RStudio' align = 'right'  style="height:250px; padding-left:10px; padding-right:10px;"/>
 
 Once everything is installed, execute the following command in RStudio to install the packages we will use for this class (you can copy-and-paste):
 
@@ -45,6 +48,8 @@ devtools::install_github("jbryer/DATA606")
 {{< /code >}}
 
 ### The `DATA606` R Package
+
+<img src='/slides/images/hex/DATA606.png' alt = 'RStudio' align = 'right'  style="height:250px; padding-left:10px; padding-right:10px;"/>
 
 Many of the course resouces are available in the `DATA606` R package. Here are some command to get started:
 
