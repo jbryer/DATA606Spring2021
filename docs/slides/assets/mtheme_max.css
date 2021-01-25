@@ -1,3 +1,15 @@
+.logo {
+  background-image: url(images/hex/DATA606.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+
 a, a > code {
   color: #ff0000;
   text-decoration: none;
@@ -27,8 +39,9 @@ a, a > code {
 .inverse {
   background-color: #23373B;
   text-shadow: none;
+  color: #f3f3f3;
 }
-.inverse h1, .inverse h2, .inverse h3 {
+.inverse h1, .inverse h2, .inverse h3, .inverse a {
   color: #f3f3f3;
 }
 /* Two-column layout */

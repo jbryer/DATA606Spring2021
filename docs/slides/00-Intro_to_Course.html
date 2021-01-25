@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>CUNY MSDS</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jason Bryer, Ph.D." />
+    <meta name="date" content="2021-01-10" />
+    <script src="libs/header-attrs-2.5.3/header-attrs.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/mtheme_max.css" type="text/css" />
+    <link rel="stylesheet" href="assets/fonts_mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# CUNY MSDS
+## Introduction
+### Jason Bryer, Ph.D.
+### 2021-01-10
+
+---
+
+
+
+
+
+# Agenda
+
+* Introduction
+	* Syllabus
+	* Assignments
+		* Homework
+		* Labs
+		* Data Project
+		* Final exam
+		* Meetup Presentation
+	* The `DATA606` R Package
+	* Using R Markdown
+
+---
+
+# Introduction
+
+A little about me:
+
+* Assistant Professor at CUNY in Data Science and Information Systems
+* Principal Investigator for a Department of Education Grant (part of their FIPSE First in the World program) to develop a Diagnostic Assessment and Achievement of College Skills ([www.DAACS.net](http://www.daacs.net))  
+* Authored over a dozen R packages including:
+	* [likert](http://github.com/jbryer/likert)
+	* [sqlutils](http://github.com/jbryer/sqlutils)
+	* [timeline](http://github.com/jbryer/timeline)
+* Specialize in propensity score methods. Three new methods/R packages developed include:
+	* [multilevelPSA](http://github.com/jbryer/multilevelPSA)
+	* [TriMatch](http://github.com/jbryer/TriMatch)
+	* [PSAboot](http://github.com/jbryer/PSAboot)
+
+---
+
+# Syllabus
+
+Syllabus and course materials are here: [https://spring2021.data606.net](https://spring2021.data606.net)
+
+The site is built using the [Blogdown](https://bookdown.org/yihui/blogdown/) R package and hosted on [Github](https://github.com/jbryer/DATA606Spring2021). Each page of the site has a "Improve this page" link at the bottom right, use that to start a pull request on Github.
+
+We will use Blackboard primary only for submitting assignments. Please submit:
+
+* A PDF or link to the built HTML (e.g. Rpubs, [Github](http://htmlpreview.github.io/))
+
+PDFs are preferred for the homework as there is some LaTeX formatting in the R markdown files. The `tineytex` R package helps with install LaTeX, but you can also install LaTeX using ([MiKTeX](http://miktex.org) (for Windows) and [BasicTeX](http://www.tug.org/mactex/morepackages.html) (for Mac) See this page for more information: 
+https://spring2021.data606.net/course-overview/software/
+
+---
+
+# Meetups
+
+We will have meetups on Wednesday evenings at 8:30pm. 
+
+Meetups will be recorded and made available the next day on the [course website](https://spring2021.data606.net/course-overview/meetups/).
+
+Though attending live is not strictly required, **I expect everyone to watch them at during the week.** I use the meetups to convey important information and announcements. Students who attend the meetups tend to do well on the assignments.
+
+**One Minute Papers** - After each Meetup (whether you watch live or watch the recordings). It should take approximately one to two minutes to complete. This allows me to 1) verify you have attended/watch the meetup and 2) get feedback about what you learned and what you may still be unclear.  
+Link: https://forms.gle/gY9SeBCPggHEtZYw6
+
+**Please note:** *Students who participate in this class with their camera on or use a profile image are agreeing to have their video or image recorded solely for the purpose of creating a record for students enrolled in the class to refer to, including those enrolled students who are unable to attend live.  If you are unwilling to consent to have your profile or video image recorded, be sure to keep your camera off and do not use a profile image. Likewise, students who un-mute during class and participate orally are agreeing to have their voices recorded.  If you are not willing to consent to have your voice recorded during class, you will need to keep your mute button activated and communicate exclusively using the "chat" feature, which allows students to type questions and comments live.*
+
+# Schedule
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Start &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; End &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Topic &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Link &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Friday, January 29, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, February 07, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 1 - Intro to Data, R, and Rstudio &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter1/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, February 08, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, February 14, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chatper 2 - Summarizing Data &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chatpers/chapter2/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, February 15, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Monday, February 15, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; President's Day &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, February 15, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, February 21, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 3 - Probability &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, February 22, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, March 07, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 4 -Distributions &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, March 08, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, March 14, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chatper 5 - Foundation for Inference &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, March 15, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, March 21, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 6 - Inference for Categorical Data &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, March 22, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Friday, March 26, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 7 - Inference for Numerical Data &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, March 27, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, April 04, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Spring Recess &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, April 05, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, April 18, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 8 Linear Regression &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, April 19, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, May 02, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chapter 9 - Multiple &amp;amp; Logistic Regression &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chapters/chapter9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Monday, May 03, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Monday, May 17, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Intro to Bayesian Analysis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /chatpers/bayesian/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Tuesday, May 18, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tuesday, May 18, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Reading Day &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wednesday, May 19, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, May 23, 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Final Exam &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; /assesssments/final/ &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Assignments
+
+* [DAACS](https://spring2021.data606.net/assignments/daacs) (5%)
+* [Homework](https://spring2021.data606.net/assignments/homework) (20%)
+* [Labs](https://spring2021.data606.net/assignments/labs) (40%)
+	* Labs are designed to introduce to you doing statistics with R.
+	* Answer the questions in the main text as well as the "On Your Own" section.
+* [Data Project](https://spring2021.data606.net/assignments/project) (15%)
+	* This allows you to analyze a dataset of your choosing. Projects will be shared with the class. This provides an opportunity for everyone to see different approaches to analyzing different datasets.
+	* Proposal is due October 25th (5%); Final project is due December 9th (15%).
+* [Final exam](https://spring2021.data606.net/assignments/final/) (15%)
+* [Meetup Presentation](https://spring2021.data606.net/assignments/presentation) (5%)
+	* Present one practice problem during our weekly meetups. Signup using the [Google Spreadsheet](https://spring2021.data606.net/course-overview/meetups).
+	* **Please select odd number questions only!**
+
+---
+
+# Communication
+
+* Slack Channel: https://data606spring2021.slack.com
+	* [Click here to join the group](https://join.slack.com/t/data606spring2021/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA)
+* There is a general CUNY MSDS Slack channel [click here](https://join.slack.com/t/data606spring2021/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA) to join it.
+* Github Issues - Use this for issues or problems with the course or `DATA606` package: https://github.com/jbryer/DATA606spring2021/issues
+* Email: jason.bryer@sps.cuny.edu
+* Phone/GoToMeeting: Please email to schedule a time to meet.
+* Office hours will typically be:
+	* Mondays from 8:30pm to 9:30pm
+	* Fridays from 11:00am to 12:00pm
+	* I will use the same Zoom link that we use for the Wednesday night meetups.
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLanguage": "R",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!-- Source: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/ -->
+<style>
+.logo {
+  background-image: url(images/hex/DATA606.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 2em;
+  right: 0.5em;
+  width: 55px;
+  height: 64px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

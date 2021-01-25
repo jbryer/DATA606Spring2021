@@ -27,8 +27,9 @@ a, a > code {
 .inverse {
   background-color: #23373B;
   text-shadow: none;
+  color: #f3f3f3;
 }
-.inverse h1, .inverse h2, .inverse h3 {
+.inverse h1, .inverse h2, .inverse h3, .inverse a {
   color: #f3f3f3;
 }
 /* Two-column layout */

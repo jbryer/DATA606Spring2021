@@ -1,39 +1,74 @@
 ---
-title: "DATA606 - Statistics & Probability for Data Analytics"
+title: "Introduction"
+subtitle: "DATA 606 - Statistics & Probability for Data Analytics"
 author: Jason Bryer, Ph.D.
-date: Fall 2020
-knit: (function(inputFile, encoding) { input.dir <- normalizePath(dirname(inputFile)); rmarkdown::render(input = inputFile, encoding = encoding, quiet=FALSE, output_file = paste0(input.dir,'/../docs/slides/', tools::file_path_sans_ext(basename(inputFile)), '.html')); })
+date: "Spring 2021"
+# This custom call to knit will copy the generated HTML file and any dependencies
+# to the docs/slides folder to be available on the website (see myknit.R)
+knit: (function(inputFile, encoding) { source('myknit.R'); myknit(inputFile, encode); } )
 output:
-  ioslides_presentation:
-    self_contained: true
-    widescreen: true
-    smaller: true
+  xaringan::moon_reader:
+    css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: R
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      in_header: [assets/header.html]
+      after_body: [assets/insert-logo.html]
+params:
+  github_link: "DATA606Spring2021"
 editor_options: 
   chunk_output_type: console
 ---
 
-<div class="notes">
-Documentation on using ioslides is available here:
-http://rmarkdown.rstudio.com/ioslides_presentation_format.html
-Some slides are adopted (or copied) from OpenIntro: https://www.openintro.org/
-</div>
+```{r setup, include = FALSE}
+# remotes::install_github("gadenbuie/countdown")
+# remotes::install_github("mitchelloharawild/icon")
+# icon::download_fontawesome()
+library(knitr)
+library(tidyverse)
+library(countdown)
+
+opts_chunk$set(digits = 3)
+
+# This style was adapted from Max Kuhn: https://github.com/rstudio-conf-2020/applied-ml
+# And Rstudio::conf 2020: https://github.com/rstudio-conf-2020/slide-templates/tree/master/xaringan
+# This slide deck shows a lot of the features of Xaringan: https://www.kirenz.com/slides/xaringan-demo-slides.html
+
+# To use, add this to the slide title:   `r I(hexes(c("DATA606")))`
+# It will use images in the images/hex_stickers directory (i.e. the filename is the paramter)
+hexes <- function(x) {
+  x <- rev(sort(x))
+  markup <- function(pkg) glue::glue('<img src="images/hex/{pkg}.png" class="title-hex">')
+  res <- purrr::map_chr(x, markup)
+  paste0(res, collapse = "")
+}
+```
 
 
-## Agenda
+# Agenda
 
 * Introduction
 	* Syllabus
-	* Assignments
+	* Class meetups
+	* Course Schedule
+	* Assignments (how you will be graded)
+		* Participation
 		* Homework
 		* Labs
 		* Data Project
 		* Final exam
-		* Meetup Presentation
-	* The `DATA606` R Package
-	* Using R Markdown
+	* Software
+		* The `DATA606` R Package
+		* Using R Markdown
 
+---
 
-## Introduction
+# Introduction
 
 A little about me:
 
@@ -47,36 +82,71 @@ A little about me:
 	* [multilevelPSA](http://github.com/jbryer/multilevelPSA)
 	* [TriMatch](http://github.com/jbryer/TriMatch)
 	* [PSAboot](http://github.com/jbryer/PSAboot)
+* Developer of a data dashboard for the NYS Office of Special Education and TAP for Data at Cornell University: https://data.osepartnership.org
 
+---
 
-## Syllabus
+# Also a Father...
+
+```{r, out.width='65%', fig.align='center', echo=FALSE}
+knitr::include_graphics('images/BoysFall2019.jpg')
+```
+
+---
+
+# Runner...
+
+<table border='0' width='100%'><tr><td>
+<center><img src='images/2020Dopey.jpg' height='450'></center>
+</td><td>
+<center><img src='images/2019NYCMarathon.jpg' height='450'></center>
+</td></tr></table>
+
+---
+
+# And photographer.
+
+```{r, out.width='80%', fig.align='center', echo=FALSE}
+knitr::include_graphics('images/Sleeping_Empire.jpg')
+```
+
+---
+
+# Syllabus `r hexes(c('blogdown', 'rmarkdown'))`
 
 Syllabus and course materials are here: [https://spring2021.data606.net](https://spring2021.data606.net)
 
 The site is built using the [Blogdown](https://bookdown.org/yihui/blogdown/) R package and hosted on [Github](https://github.com/jbryer/DATA606Spring2021). Each page of the site has a "Improve this page" link at the bottom right, use that to start a pull request on Github.
 
-We will use Blackboard primary only for submitting assignments. Please submit:
+We will use Blackboard primary for submitting assignments only. Please submit:
 
 * A PDF or link to the built HTML (e.g. Rpubs, [Github](http://htmlpreview.github.io/))
 
-PDFs are preferred for the homework as there is some LaTeX formatting in the R markdown files. The `tineytex` R package helps with install LaTeX, but you can also install LaTeX using ([MiKTeX](http://miktex.org) (for Windows) and [BasicTeX](http://www.tug.org/mactex/morepackages.html) (for Mac) See this page for more information: 
+PDFs are preferred for the homework as there is some LaTeX formatting in the R markdown files. The `tineytex` R package helps with install LaTeX, but you can also install LaTeX using [MiKTeX](http://miktex.org) (for Windows) and [BasicTeX](http://www.tug.org/mactex/morepackages.html) (for Mac) See this page for more information: 
 https://spring2021.data606.net/course-overview/software/
 
-## Meetups
+---
+
+# Meetups
 
 We will have meetups on Wednesday evenings at 8:30pm. 
 
 Meetups will be recorded and made available the next day on the [course website](https://spring2021.data606.net/course-overview/meetups/).
 
-Though attending live is not strictly required, **I expect everyone to watch them at during the week.** I use the meetups to convey important information and announcements. Students who attend the meetups tend to do well on the assignments.
+Though attending live is not strictly required, **I expect everyone to watch the lectures during the week.** I use the class meetups to convey important information and announcements. Very often I will cover some topics not in the textbook. Students who attend the meetups tend to do well on the assignments.
 
-**One Minute Papers** - After each Meetup (whether you watch live or watch the recordings). It should take approximately one to two minutes to complete. This allows me to 1) verify you have attended/watch the meetup and 2) get feedback about what you learned and what you may still be unclear.  
+**One Minute Papers** - Complete the one minute paper after each Meetup (whether you watch live or watch the recordings). It should take approximately one to two minutes to complete. This allows me to 1) verify you have attended/watch the meetup and 2) get feedback about what you learned and what you may still be unclear.  
 Link: https://forms.gle/gY9SeBCPggHEtZYw6
+
+.font60[
 
 **Please note:** *Students who participate in this class with their camera on or use a profile image are agreeing to have their video or image recorded solely for the purpose of creating a record for students enrolled in the class to refer to, including those enrolled students who are unable to attend live.  If you are unwilling to consent to have your profile or video image recorded, be sure to keep your camera off and do not use a profile image. Likewise, students who un-mute during class and participate orally are agreeing to have their voices recorded.  If you are not willing to consent to have your voice recorded during class, you will need to keep your mute button activated and communicate exclusively using the "chat" feature, which allows students to type questions and comments live.*
 
+]
 
-##  {.smaller}
+---
+
+# Schedule
 
 ```{r schedule-setup, echo=FALSE, warning=FALSE, message=FALSE}
 # devtools::install_github("gadenbuie/ggweekly")
@@ -90,7 +160,7 @@ library(lubridate)
 
 options(knitr.kable.NA = '')
 
-semester <- 'Fall 2020'
+semester <- 'Spring 2021'
 
 palette <- c('#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462',
 			 '#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f')
@@ -141,36 +211,85 @@ end_day <- lubridate::ceiling_date(max(meetups$day), "month") - 1
 ```{r printTopics, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 topics$Start <- format(topics$Start, format = '%A, %B %d, %Y')
 topics$End <- format(topics$End, format = '%A, %B %d, %Y')
-knitr::kable(topics)
+topics <- topics %>% filter(!is.na(Link)) %>% select(-Link)
+knitr::kable(topics, format = 'html')
 ```
 
-## Assignments
+---
 
-* [DAACS](https://spring2021.data606.net/assignments/daacs) (5%)
-* [Homework](https://spring2021.data606.net/assignments/homework) (20%)
-* [Labs](https://spring2021.data606.net/assignments/labs) (40%)
+# Assignments
+
+* [DAACS](https://spring2021.data606.net/assignments/daacs) (6%)
+* [Participation](https://spring2021.data606.net/assignments/participation) (10%)
+  * One Minute Papers
+  * Meetup Presentation - Present one practice problem during our weekly meetups. Signup using the [Google Spreadsheet](https://spring2021.data606.net/course-overview/meetups). **Please select odd number questions only!**
+* [Homework](https://spring2021.data606.net/assignments/homework) (18%)
+* [Labs](https://spring2021.data606.net/assignments/labs) (36%)
 	* Labs are designed to introduce to you doing statistics with R.
 	* Answer the questions in the main text as well as the "On Your Own" section.
-* [Data Project](https://spring2021.data606.net/assignments/project) (15%)
+* [Data Project](https://spring2021.data606.net/assignments/project) (20%)
 	* This allows you to analyze a dataset of your choosing. Projects will be shared with the class. This provides an opportunity for everyone to see different approaches to analyzing different datasets.
-	* Proposal is due October 25th (5%); Final project is due December 9th (15%).
-* [Final exam](https://spring2021.data606.net/assignments/final/) (15%)
-* [Meetup Presentation](https://spring2021.data606.net/assignments/presentation) (5%)
-	* Present one practice problem during our weekly meetups. Signup using the [Google Spreadsheet](https://spring2021.data606.net/course-overview/meetups).
-	* **Please select odd number questions only!**
+* [Final exam](https://spring2021.data606.net/assignments/final/) (10%)
 
+---
 
-## Communication
+# Communication
 
 * Slack Channel: https://data606spring2021.slack.com
 	* [Click here to join the group](https://join.slack.com/t/data606spring2021/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA)
 * There is a general CUNY MSDS Slack channel [click here](https://join.slack.com/t/data606spring2021/shared_invite/zt-gwto1eyo-r8tQGf_0V77AW4ey6rZKyA) to join it.
 * Github Issues - Use this for issues or problems with the course or `DATA606` package: https://github.com/jbryer/DATA606spring2021/issues
-* Email: jason.bryer@sps.cuny.edu
-* Phone/GoToMeeting: Please email to schedule a time to meet.
+* Email: [jason.bryer@sps.cuny.edu](mailto:jason.bryer@sps.cuny.edu)
+* Phone/Zoom: Please email to schedule a time to meet.
 * Office hours will typically be:
-	* Mondays from 8:30pm to 9:30pm
-	* Fridays from 11:00am to 12:00pm
-	* Please use the Calendly link on the course homepage.
+	* Fridays from 12:00am to 1:00pm
 	* I will use the same Zoom link that we use for the Wednesday night meetups.
+
+---
+
+# Software `r hexes(c('rmarkdown', 'RStudio', 'tinytex'))`
+
+This is an applied statistics course so we will make extensive use of the [R statistical programming language](https://www.r-project.org). You have two options for using R in this course:
+
+* CUNY SPS has an RStudio Server that you can access using a browser: https://rstudio.sps.cuny.edu  
+  You will use your CUNY login credentials to log in.
+
+* Install [R](https://cran.r-project.org) and [RStudio](https://rstudio.com) on your own computer. I encourage everyone to do this at some point by the end of the semester. I have instructions on the course website here: https://spring2021.data606.net/course-overview/software/
+
+You will also need to have [LaTeX](https://www.latex-project.org) installed as well in order to create PDFs. The [`tinytex`](https://yihui.org/tinytex/) R package helps with this process:
+
+```
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
+---
+
+# DATA 606 Package `r hexes(c('devtools', 'rmarkdown'))`
+
+The [`DATA606`](https://github.com/jbryer/DATA606) R package contains many data sets and functions we will use throughout the semester. It also has a `startLab` function that will copy each of the labs to your current working directory. Use the following commands to install the package (only necessary once per R installation):
+
+```
+remotes::install_github('jbryer/DATA606')
+```
+
+To start the first lab...
+
+```
+DATA606::startLab('Lab1')
+```
+
+This will copy the R markdown file and any supporting files to your current working directory. Use the "Knit" button in R Studio to build a PDF of the document.
+
+
+---
+class: inverse, right, middle, hide-logo
+
+# Good luck with the semester!
+
+[`r icon::fontawesome("twitter")` @jbryer](https://twitter.com/apreshill)  
+[`r icon::fontawesome("github")` @jbryer](https://github.com/jbryer)  
+[`r icon::fontawesome("link")` bryer.org](https://bryer.org)  
+[`r icon::fontawesome("paper-plane")` jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)  
+
 
