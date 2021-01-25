@@ -1,4 +1,4 @@
-DATAA 606 Spring 2021
+DATA 606 Spring 2021
 ================
 
 <a href='https://spring2021.data606.net'><img src='website/static/images/course_logo.png' align="right" height="200" /></a>
@@ -32,8 +32,7 @@ blogdown::new_site(dir = 'website',
 ```
 
 ``` r
-setwd('website')
-blogdown::serve_site()
+wd <- setwd('website'); blogdown::serve_site(); setwd(wd)
 ```
 
 ``` r

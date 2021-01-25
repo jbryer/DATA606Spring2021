@@ -1,5 +1,5 @@
 ---
-title: "DATAA 606 Spring 2021"
+title: "DATA 606 Spring 2021"
 output: github_document
 editor_options: 
   chunk_output_type: console
@@ -34,8 +34,7 @@ blogdown::new_site(dir = 'website',
 
 
 ```{r, eval = FALSE}
-setwd('website')
-blogdown::serve_site()
+wd <- setwd('website'); blogdown::serve_site(); setwd(wd)
 ```
 
 ```{r, eval = FALSE}
@@ -76,10 +75,12 @@ You can create announcements (blog posts) in the `website/content/blog/` folder.
 
 #### Building and Deploying the Site
 
-The `blogdown::build_site('webiste')` function will build the website into the `docs` subdirectory. This is the default location for Github pages. Be sure to verify this on the settings page for the repository under the "GitHub Pages" heading.
+The `blogdown::build_site()` function will build the website into the `docs` subdirectory. This is the default location for Github pages. Be sure to verify this on the settings page for the repository under the "GitHub Pages" heading.
 
 ```{r, eval = FALSE}
+wd <- setwd('website')
 blogdown::build_site()
+setwd(wd)
 ```
 
 Additionally, you can configure a custom URL if you wish on the Github settings page. Once the website is built, push the `docs` folder to your Github repository.

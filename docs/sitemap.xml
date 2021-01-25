@@ -3,13 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
+    <loc>/chapters/chapter1/</loc>
+    <lastmod>2017-04-29T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/chapters/chapter1/</loc>
-    <lastmod>2017-04-29T18:36:24+02:00</lastmod>
+    <loc>/blog/</loc>
   </url>
   
   <url>
@@ -24,10 +23,6 @@
   <url>
     <loc>/chapters/chapter2/</loc>
     <lastmod>2017-04-29T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/assignments/participation/</loc>
   </url>
   
   <url>
@@ -125,33 +120,16 @@
   </url>
   
   <url>
-    <loc>/tags/annoucement/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/01-welcome-to-data606/</loc>
-    <lastmod>2021-01-29T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
