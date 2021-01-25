@@ -327,7 +327,7 @@ DATA606::startLab('Lab1')
 This will copy the R markdown file and any supporting files to your current working directory. Use the "Knit" button in R Studio to build a PDF of the document.
 
 ---
-# Next steps...
+# Next steps... `r hexes(c('DAACS'))`
 
 Before Monday:
 
