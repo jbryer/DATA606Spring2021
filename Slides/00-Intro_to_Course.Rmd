@@ -332,7 +332,7 @@ This will copy the R markdown file and any supporting files to your current work
 Before Monday:
 
 * Complete this Google form: https://forms.gle/FGsUWy61k8A3ujYH9
-* Create an account at https://demo.daacs.net and complete the self-regulated learning assessment
+* Create an account at https://my.daacs.net and complete the self-regulated learning assessment
 * [Join the Slack channel](https://join.slack.com/t/bryer/shared_invite/zt-kdk4bypz-x5zJS0oTypT3TEPilfy~IA)
 
 Then:
