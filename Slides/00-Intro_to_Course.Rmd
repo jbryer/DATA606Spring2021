@@ -242,7 +242,11 @@ This will be our primary textbook for most of the semesters. Our goal is to cove
 
 ]
 
+.center[
+
 <a href = "https://github.com/jbryer/DATA606Spring2021/blob/master/Resources/Textbooks/os4.pdf"><img src = 'images/openintro.jpeg' alt = 'Open Intro Statistics' height = '375px' /></a>
+
+]
 
 ]
 
@@ -256,7 +260,11 @@ This textbooks has a chapter on Bayesian analysis that we will use at the end of
 
 ]
 
+.center[
+
 <a href = "https://github.com/jbryer/DATA606Spring2021/blob/master/Resources/Textbooks/lsr-0.6.pdf"><img src = 'images/lsr.png' alt = 'Learning Statistics with R' height = '375px' /></a>
+
+]
 
 ]
 
