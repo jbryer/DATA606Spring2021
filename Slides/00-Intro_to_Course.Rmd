@@ -337,9 +337,9 @@ Before Monday:
 
 Then:
 
-* Attend the meetup on Wednesday at 8:30 pm (or watch the recording)
-* Start Lab 1
-* Start Homework 1
+* Attend the meetup on Wednesday (February 3rd) at 8:30 pm (or watch the recording)
+* Start Lab 1 (due February 7th)
+* Start Homework 1 (due February 7th)
 
 ---
 class: inverse, right, middle, hide-logo
