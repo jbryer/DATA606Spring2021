@@ -12,3 +12,4 @@ title: Home
 
 *Be sure to check this page regularly for updates.*
 
+<hr />
