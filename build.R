@@ -21,5 +21,5 @@ for(i in tocopy) {
 	}
 }
 wd <- setwd('website')
-blogdown::build_site()
+blogdown::build_site(build_rmd = TRUE)
 setwd(wd)
