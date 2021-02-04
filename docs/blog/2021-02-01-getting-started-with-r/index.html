@@ -3,10 +3,10 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Home - DATA 606 - Statistics &amp; Probability - Spring 2021</title>
+<title>Getting Started with R - DATA 606 - Statistics &amp; Probability - Spring 2021</title>
 <meta name="generator" content="Hugo 0.78.1" />
 <link href="//index.xml" rel="alternate" type="application/rss+xml">
-<link rel="canonical" href="/">
+<link rel="canonical" href="/blog/2021-02-01-getting-started-with-r/">
 <link rel="stylesheet" href="/css/theme.min.css">
 <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <link rel="stylesheet" href="/css/chroma.min.css">
@@ -16,19 +16,31 @@
 <script src="/js/bundle.js"></script><style>
 :root {--custom-background-color: #005DAC;}
 </style>
-<meta property="og:title" content="Home" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:title" content="Getting Started with R" />
+<meta property="og:description" content="To get started with the labs, you will need to install R and other supporting applications. Links to download all the software is on the Software page at http://data606.net/software which is available on the Course Overview menu. Once you are in RStudio, you will need to install a number of R packages using the following two commands:
+install.packages(c(&#39;openintro&#39;,&#39;OIdata&#39;,&#39;devtools&#39;,&#39;tidyverse&#39;, &#39;ggplot2&#39;, &#39;psych&#39;,&#39;reshape2&#39;,&#39;knitr&#39;,&#39;markdown&#39;,&#39;shiny&#39;,&#39;R.rsp&#39;, &#39;fivethirtyeight&#39;)) devtools::install_github(&quot;jbryer/DATA606&quot;) Note that this course used to be listed as IS 606, hence the different package name." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2021-02-01-getting-started-with-r/" />
 <meta property="og:image" content="/images/og-image.png"/>
-<meta property="og:updated_time" content="2021-02-03T00:00:00+00:00" /><meta property="og:site_name" content="DATA 606" />
+<meta property="article:published_time" content="2021-02-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-01T00:00:00+00:00" /><meta property="og:site_name" content="DATA 606" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/og-image.png"/>
 
-<meta name="twitter:title" content="Home"/>
-<meta name="twitter:description" content=""/>
-<meta itemprop="name" content="Home">
-<meta itemprop="description" content="">
+<meta name="twitter:title" content="Getting Started with R"/>
+<meta name="twitter:description" content="To get started with the labs, you will need to install R and other supporting applications. Links to download all the software is on the Software page at http://data606.net/software which is available on the Course Overview menu. Once you are in RStudio, you will need to install a number of R packages using the following two commands:
+install.packages(c(&#39;openintro&#39;,&#39;OIdata&#39;,&#39;devtools&#39;,&#39;tidyverse&#39;, &#39;ggplot2&#39;, &#39;psych&#39;,&#39;reshape2&#39;,&#39;knitr&#39;,&#39;markdown&#39;,&#39;shiny&#39;,&#39;R.rsp&#39;, &#39;fivethirtyeight&#39;)) devtools::install_github(&quot;jbryer/DATA606&quot;) Note that this course used to be listed as IS 606, hence the different package name."/>
+<meta itemprop="name" content="Getting Started with R">
+<meta itemprop="description" content="To get started with the labs, you will need to install R and other supporting applications. Links to download all the software is on the Software page at http://data606.net/software which is available on the Course Overview menu. Once you are in RStudio, you will need to install a number of R packages using the following two commands:
+install.packages(c(&#39;openintro&#39;,&#39;OIdata&#39;,&#39;devtools&#39;,&#39;tidyverse&#39;, &#39;ggplot2&#39;, &#39;psych&#39;,&#39;reshape2&#39;,&#39;knitr&#39;,&#39;markdown&#39;,&#39;shiny&#39;,&#39;R.rsp&#39;, &#39;fivethirtyeight&#39;)) devtools::install_github(&quot;jbryer/DATA606&quot;) Note that this course used to be listed as IS 606, hence the different package name.">
+<meta itemprop="datePublished" content="2021-02-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-02-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="240">
+<meta itemprop="image" content="/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="R Markdown,working directories," />
 <link href='/fullcalendar-lib/main.css' rel='stylesheet' />
 <script src='/fullcalendar-lib/main.js'></script>
 
@@ -62,32 +74,7 @@
 </nav>
 </div>
 <div class="content-container">
-<main><p><img src='images/course_logo.png' align="right" style="height:250px; padding-left:10px; padding-right:10px;" /></p>
-<h1 id="data-606-statistics--probabilitybrspring-2021">DATA 606 Statistics &amp; Probability<br/>Spring 2021</h1>
-<br/>
-<h2 id="announcements">Announcements</h2>
-<p><em>Be sure to check this page regularly for updates.</em></p>
-<hr />
-<nav class="pagination">
-</nav><article>
-<h3><a href="/blog/2021-02-03-intro_to_data/">Intro to Data Meetup</a></h3>
-<time>Wed, Feb 3, 2021</time>
-
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-
-<p>Here is a recording of the Intro to Data Meetup. <a href="/slides/01-Intro_to_Data.html#1">Click here</a> to open the slides.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ly6ydcOgSTw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<!-- iframe src="/slides/00-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe  -->
- 
-</article>
-<hr/>
-<article>
-<h3><a href="/blog/2021-02-01-getting-started-with-r/">Getting Started with R</a></h3>
-<time>Mon, Feb 1, 2021</time>
-
+<main><h1>Getting Started with R</h1>
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
@@ -118,59 +105,14 @@ startLab(&#39;Lab1&#39;)</code></pre>
 <img src="/figures/RStudio-screen-wd.png" alt="" />
 <p class="caption">Working Directory</p>
 </div>
- 
-</article>
-<hr/>
-<article>
-<h3><a href="/blog/02-introductions/">Introductions</a></h3>
-<time>Fri, Jan 29, 2021</time>
-
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-
-<p>Here is a recording of the course introduction Meetup. <a href="/slides/00-Intro_to_Course.html#1">Click here</a> to open the slides.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/COXMuhVMOrI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<!-- iframe src="/slides/00-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe  -->
- 
-</article>
-<hr/>
-<article>
-<h3><a href="/blog/01-welcome-to-data606/">Welcome to DATA606!</a></h3>
-<time>Mon, Jan 25, 2021</time>
-
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-
-<p>Welcome to DATA606! My name is Dr. Jason Bryer and I will be your instructor for this semester. I am an Assistant Professor in the Data Science and Information Systems department at CUNY SPS. Couple of important notes as you get started:</p>
-<ul>
-<li>The course syllabus located here: <a href="https://spring2021.data606.net/course-overview" class="uri">https://spring2021.data606.net/course-overview</a> I will post all course materials there. Blackboard will be used primarily for submitting assignments. <strong>Please read the syllabus carefully!</strong> Send me any questions you may still have about the course.</li>
-<li>Complete this <a href="https://forms.gle/FGsUWy61k8A3ujYH9">Google Form</a> as soon as possible. I will use some of the data (in aggregate) in the meetup.</li>
-<li><a href="https://join.slack.com/t/data606spring2021/shared_invite/zt-kdk4bypz-x5zJS0oTypT3TEPilfy~IA">Join the Slack channel by clicking here</a>. This will be our primary mode of communication. For private communications, you can either send private Slack messages or email me at <a href="mailto:jason.bryer@sps.cuny.edu">jason.bryer@sps.cuny.edu</a>.</li>
-<li>Once you go through the syllabus, try starting Lab 1 as soon as you can. This will require you to install R and RStudio and will help get you get acquainted with R. See the <a href="/course-overview/software/">software page</a> for more information about the software we will use for this course.</li>
-<li>The best way to reach me is by Slack or email at <a href="mailto:jason.bryer@sps.cuny.edu">jason.bryer@sps.cuny.edu</a>. If you would prefer to talk on the phone or setup a Zoom session, it is best to suggest some times by email first.</li>
-<li>Our Meetups will be on Wednesdays from 8:30pm to 9:30pm. <strong>I expect everyone to attend or watch the Meetups.</strong> Important information will be shared during the meetups that will not be available in any other format.</li>
-<li>I am looking forward to getting to know everyone and a fantastic semester! Good luck!</li>
-</ul>
-<!-- iframe width="560" height="315" src="https://www.youtube.com/embed/yIyferBnO24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe -->
-<!-- iframe src="/slides/2019-01-24-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe -->
- 
-</article>
-<hr/>
-<div class="edit-meta">
-Last updated on Wed Feb 3, 2021
-
-
-<br><a href="https://github.com/jbryer/DATA606Spring2021/edit/master/website/content/_index.md" class="edit-page"><i class="fas fa-pen-square"></i> Edit on GitHub</a></div><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+<footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
 <div class="sidebar">
 
 <nav class="open-menu">
 <ul>
-<li class="active"><a href="/">Home</a></li>
+<li class=""><a href="/">Home</a></li>
 
 
 
