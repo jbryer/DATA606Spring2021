@@ -352,6 +352,8 @@ Then:
 ---
 class: inverse, right, middle, hide-logo
 
+<!--img src="images/hex/DATA606.png" width="150px"/-->
+
 # Good luck with the semester!
 
 [`r icon::fontawesome("paper-plane")` jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)  
