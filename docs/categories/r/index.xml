@@ -6,7 +6,17 @@
     <description>Recent content in R on DATA 606 - Statistics &amp; Probability - Spring 2021</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intro to Data Meetup</title>
+      <link>/blog/2021-02-10-summarizing_data/</link>
+      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021-02-10-summarizing_data/</guid>
+      <description>  Here is a recording of the Intro to Data Meetup. Click here to open the slides.
+ </description>
+    </item>
+    
     <item>
       <title>Intro to Data Meetup</title>
       <link>/blog/2021-02-03-intro_to_data/</link>
