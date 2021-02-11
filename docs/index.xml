@@ -61,9 +61,9 @@ I am currently an Assistant Professor in Data Science and Information Systems at
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/course-overview/schedule/</guid>
-      <description>Note: Schedule is subject to change. Last updated February 03, 2021 09:44PM.
+      <description>Note: Schedule is subject to change. Last updated February 10, 2021 10:02PM.
 CUNY SPS Academic Calendar
- document.addEventListener(&#39;DOMContentLoaded&#39;, function() { var calendarEl = document.getElementById(&#39;calendar&#39;); var calendar = new FullCalendar.Calendar(calendarEl, { initialDate: &#39;2021-02-03&#39;, initialView: &#39;dayGridMonth&#39;, headerToolbar: { left: &#39;prev,next today&#39;, center: &#39;title&#39;, right: &#39;dayGridMonth,timeGridWeek,timeGridDay,listWeek&#39; }, height: &#39;auto&#39;, navLinks: true, // can click day/week names to navigate views editable: true, selectable: true, selectMirror: true, nowIndicator: true, events: [ { title: &#34;</description>
+ document.addEventListener(&#39;DOMContentLoaded&#39;, function() { var calendarEl = document.getElementById(&#39;calendar&#39;); var calendar = new FullCalendar.Calendar(calendarEl, { initialDate: &#39;2021-02-10&#39;, initialView: &#39;dayGridMonth&#39;, headerToolbar: { left: &#39;prev,next today&#39;, center: &#39;title&#39;, right: &#39;dayGridMonth,timeGridWeek,timeGridDay,listWeek&#39; }, height: &#39;auto&#39;, navLinks: true, // can click day/week names to navigate views editable: true, selectable: true, selectMirror: true, nowIndicator: true, events: [ { title: &#34;</description>
     </item>
     
     <item>
@@ -252,7 +252,7 @@ Occasionally you will need to type equations in homework and labs. R Markdown su
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog/2021-02-01-getting-started-with-r/</guid>
-      <description>To get started with the labs, you will need to install R and other supporting applications. Links to download all the software is on the Software page at http://data606.net/software which is available on the Course Overview menu. Once you are in RStudio, you will need to install a number of R packages using the following two commands:
+      <description>To get started with the labs, you will need to install R and other supporting applications. Links to download all the software is on the Software page which is also available on the Course Overview menu. Once you are in RStudio, you will need to install a number of R packages using the following two commands:
 install.packages(c(&amp;#39;openintro&amp;#39;,&amp;#39;OIdata&amp;#39;,&amp;#39;devtools&amp;#39;,&amp;#39;tidyverse&amp;#39;, &amp;#39;ggplot2&amp;#39;, &amp;#39;psych&amp;#39;,&amp;#39;reshape2&amp;#39;,&amp;#39;knitr&amp;#39;,&amp;#39;markdown&amp;#39;,&amp;#39;shiny&amp;#39;,&amp;#39;R.rsp&amp;#39;, &amp;#39;fivethirtyeight&amp;#39;)) devtools::install_github(&amp;quot;jbryer/DATA606&amp;quot;) Note that this course used to be listed as IS 606, hence the different package name.</description>
     </item>
     

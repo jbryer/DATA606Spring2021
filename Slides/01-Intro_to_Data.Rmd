@@ -3,9 +3,6 @@ title: "Intro to Data"
 subtitle: "DATA 606 - Statistics & Probability for Data Analytics"
 author: Jason Bryer, Ph.D.
 date: "February 3, 2021"
-# This custom call to knit will copy the generated HTML file and any dependencies
-# to the docs/slides folder to be available on the website (see myknit.R)
-# knit: (function(inputFile, encoding) { source('myknit.R'); myknit(inputFile, encode); } )
 output:
   xaringan::moon_reader:
     css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
