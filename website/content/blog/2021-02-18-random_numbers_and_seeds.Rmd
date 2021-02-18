@@ -5,6 +5,7 @@ date: 2021-02-18
 draft: false
 categories: ["R"]
 tags: ["random numbers"]
+#summary: This post explores how R generates random numbers and the use of seeds.
 ---
 
 To explore how R generates random numbers, we will use the `rnorm` function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the `mean` and `sd` parameters). With `n = 1` we will get one random number.

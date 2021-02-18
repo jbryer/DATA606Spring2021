@@ -13,8 +13,14 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog/2021-02-17-probability/</guid>
-      <description>  Here is a recording of the Summarizing Data Meetup. Click here to open the slides.
- </description>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Here is a recording of the Summarizing Data Meetup. &lt;a href=&#34;/slides/03-Probability#1&#34;&gt;Click here&lt;/a&gt; to open the slides.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/WRQvP6Z_Vyc&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
     </item>
     
     <item>
@@ -23,8 +29,14 @@
       <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog/2021-02-10-summarizing_data/</guid>
-      <description>  Here is a recording of the Summarizing Data Meetup. Click here to open the slides.
- </description>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Here is a recording of the Summarizing Data Meetup. &lt;a href=&#34;/slides/02-Summarizing_Data.html#1&#34;&gt;Click here&lt;/a&gt; to open the slides.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/pQp5iAMVqTs&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
     </item>
     
     <item>
@@ -33,8 +45,14 @@
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog/2021-02-03-intro_to_data/</guid>
-      <description>  Here is a recording of the Intro to Data Meetup. Click here to open the slides.
- </description>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Here is a recording of the Intro to Data Meetup. &lt;a href=&#34;/slides/01-Intro_to_Data.html#1&#34;&gt;Click here&lt;/a&gt; to open the slides.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/Ly6ydcOgSTw&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
     </item>
     
     <item>
@@ -43,8 +61,14 @@
       <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog/02-introductions/</guid>
-      <description>  Here is a recording of the course introduction Meetup. Click here to open the slides.
- </description>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Here is a recording of the course introduction Meetup. &lt;a href=&#34;/slides/00-Intro_to_Course.html#1&#34;&gt;Click here&lt;/a&gt; to open the slides.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/COXMuhVMOrI&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
     </item>
     
   </channel>

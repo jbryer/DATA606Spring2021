@@ -66,37 +66,8 @@
 <article>
 <h3><a href="/blog/2021-02-18-random_numbers_and_seeds/">Random Numbers and Seeds in R</a></h3>
 <time>Thu, Feb 18, 2021</time>
-
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-
-<p>To explore how R generates random numbers, we will use the <code>rnorm</code> function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the <code>mean</code> and <code>sd</code> parameters). With <code>n = 1</code> we will get one random number.</p>
-<pre class="r"><code>rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.2385909</code></pre>
-<pre class="r"><code>rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.5400795</code></pre>
-<p>Each time you run the command you will get a different number. The <code>set.seed</code> function will sets a seed to the random number generator so that each subsequent run will produce the same number.</p>
-<pre class="r"><code>set.seed(2112); rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.9243372</code></pre>
-<pre class="r"><code>set.seed(2112); rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.9243372</code></pre>
-<p>Setting a different seed results in a different number.</p>
-<pre class="r"><code>set.seed(2113); rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.5499032</code></pre>
-<p><strong>What are seeds?</strong></p>
-<p>Computers are actually bad at random events. However, there are good algorithms that mimic random processes (hence psydo random). These algorithms work by starting with some initial value, a seed, and executing a complex algorithm that approximates randomization. The seed is often set to the current time in milliseconds. To visualize the random process, we will use the <code>sample</code> function to randomly select a number between 1 and 100. We will consider the ouput for the first 1,000 seeds.</p>
-<pre class="r"><code>random_numbers &lt;- integer(1000)
-for(i in seq_len(length(random_numbers))) {
-    set.seed(i)
-    random_numbers[i] &lt;- sample(1:100, size = 1)
-}
-library(ggplot2)
-ggplot(data.frame(x = 1:100, y = random_numbers),
-       aes(x = x, y = y)) + 
-    geom_point() +
-    xlab(&#39;Seed&#39;) + ylab(&#39;Random Number&#39;)</code></pre>
-<p><img src="/blog/2021-02-18-random_numbers_and_seeds_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
- 
+To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
+rnorm(n = 1) ## [1] 1.01585 rnorm(n = 1) ## [1] 1.657513 Each time you run the command you will get a different number. 
 </article>
 <hr/>
 
@@ -111,8 +82,6 @@ ggplot(data.frame(x = 1:100, y = random_numbers),
 <p>Here is a recording of the Summarizing Data Meetup. <a href="/slides/03-Probability#1">Click here</a> to open the slides.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WRQvP6Z_Vyc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<!-- iframe src="/slides/00-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe  -->
  
 </article>
 <hr/>
@@ -128,8 +97,6 @@ ggplot(data.frame(x = 1:100, y = random_numbers),
 <p>Here is a recording of the Summarizing Data Meetup. <a href="/slides/02-Summarizing_Data.html#1">Click here</a> to open the slides.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pQp5iAMVqTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<!-- iframe src="/slides/00-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe  -->
  
 </article>
 <hr/>
@@ -145,8 +112,6 @@ ggplot(data.frame(x = 1:100, y = random_numbers),
 <p>Here is a recording of the Intro to Data Meetup. <a href="/slides/01-Intro_to_Data.html#1">Click here</a> to open the slides.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ly6ydcOgSTw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<!-- iframe src="/slides/00-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe  -->
  
 </article>
 <hr/>
@@ -160,32 +125,6 @@ ggplot(data.frame(x = 1:100, y = random_numbers),
 
 
 <p>To get started with the labs, you will need to install R and other supporting applications. Links to download all the software is on the <a href="/course-overview/software/">Software</a> page which is also available on the <code>Course Overview</code> menu. Once you are in RStudio, you will need to install a number of R packages using the following two commands:</p>
-<pre><code>install.packages(c(&#39;openintro&#39;,&#39;OIdata&#39;,&#39;devtools&#39;,&#39;tidyverse&#39;, &#39;ggplot2&#39;,
-                   &#39;psych&#39;,&#39;reshape2&#39;,&#39;knitr&#39;,&#39;markdown&#39;,&#39;shiny&#39;,&#39;R.rsp&#39;,
-                   &#39;fivethirtyeight&#39;))
-devtools::install_github(&quot;jbryer/DATA606&quot;)</code></pre>
-<p>Note that this course used to be listed as IS 606, hence the different package name. The <code>library</code> command will load the package and the <code>startLab</code> function will:</p>
-<ol style="list-style-type: decimal">
-<li>Create a folder called <code>Lab1</code> in the current working directory.</li>
-<li>Open the the RMarkdown file (note that the name should have your login name).</li>
-</ol>
-<pre><code>library(DATA606)
-startLab(&#39;Lab1&#39;)</code></pre>
-<p>Note the <code>Lab1</code> directory has been created.</p>
-<div class="figure">
-<img src="/figures/RStudio-screen-files.png" alt="" />
-<p class="caption">RStudio Files Panel</p>
-</div>
-<p>If you click <code>Lab0</code> that will take you into that folder where you will see the RMardkown file (<code>.Rmd</code> extension) along with all the supporting files. Under the <code>More</code> menu there is an option to <code>Set As Working Directory</code>, you will want to do this before working in the RMarkdown file.</p>
-<div class="figure">
-<img src="/figures/RStudio-screen-setwd.png" alt="" />
-<p class="caption">Setting Working Directory</p>
-</div>
-<p>The console pane will always tell you what your current working directory is. Clicking the arrow icon will open that folder in the <code>Files</code> tab on the right. R will look for files and directories that do not have absolute paths (i.e. starting with <code>C:</code> on windows or <code>/</code> on Linux and Macs) relative to the working directory.</p>
-<div class="figure">
-<img src="/figures/RStudio-screen-wd.png" alt="" />
-<p class="caption">Working Directory</p>
-</div>
  
 </article>
 <hr/>
@@ -201,8 +140,6 @@ startLab(&#39;Lab1&#39;)</code></pre>
 <p>Here is a recording of the course introduction Meetup. <a href="/slides/00-Intro_to_Course.html#1">Click here</a> to open the slides.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/COXMuhVMOrI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<!-- iframe src="/slides/00-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe  -->
  
 </article>
 <hr/>
@@ -211,24 +148,8 @@ startLab(&#39;Lab1&#39;)</code></pre>
 <article>
 <h3><a href="/blog/01-welcome-to-data606/">Welcome to DATA606!</a></h3>
 <time>Mon, Jan 25, 2021</time>
-
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-
-<p>Welcome to DATA606! My name is Dr. Jason Bryer and I will be your instructor for this semester. I am an Assistant Professor in the Data Science and Information Systems department at CUNY SPS. Couple of important notes as you get started:</p>
-<ul>
-<li>The course syllabus located here: <a href="https://spring2021.data606.net/course-overview" class="uri">https://spring2021.data606.net/course-overview</a> I will post all course materials there. Blackboard will be used primarily for submitting assignments. <strong>Please read the syllabus carefully!</strong> Send me any questions you may still have about the course.</li>
-<li>Complete this <a href="https://forms.gle/FGsUWy61k8A3ujYH9">Google Form</a> as soon as possible. I will use some of the data (in aggregate) in the meetup.</li>
-<li><a href="https://join.slack.com/t/data606spring2021/shared_invite/zt-kdk4bypz-x5zJS0oTypT3TEPilfy~IA">Join the Slack channel by clicking here</a>. This will be our primary mode of communication. For private communications, you can either send private Slack messages or email me at <a href="mailto:jason.bryer@sps.cuny.edu">jason.bryer@sps.cuny.edu</a>.</li>
-<li>Once you go through the syllabus, try starting Lab 1 as soon as you can. This will require you to install R and RStudio and will help get you get acquainted with R. See the <a href="/course-overview/software/">software page</a> for more information about the software we will use for this course.</li>
-<li>The best way to reach me is by Slack or email at <a href="mailto:jason.bryer@sps.cuny.edu">jason.bryer@sps.cuny.edu</a>. If you would prefer to talk on the phone or setup a Zoom session, it is best to suggest some times by email first.</li>
-<li>Our Meetups will be on Wednesdays from 8:30pm to 9:30pm. <strong>I expect everyone to attend or watch the Meetups.</strong> Important information will be shared during the meetups that will not be available in any other format.</li>
-<li>I am looking forward to getting to know everyone and a fantastic semester! Good luck!</li>
-</ul>
-<!-- iframe width="560" height="315" src="https://www.youtube.com/embed/yIyferBnO24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe -->
-<!-- iframe src="/slides/2019-01-24-Intro_to_Course.html#1" width="1024px" height="768px"  frameborder="0" allowfullscreen>
-</iframe -->
- 
+Welcome to DATA606! My name is Dr. Jason Bryer and I will be your instructor for this semester. I am an Assistant Professor in the Data Science and Information Systems department at CUNY SPS. Couple of important notes as you get started:
+ The course syllabus located here: https://spring2021.data606.net/course-overview I will post all course materials there. Blackboard will be used primarily for submitting assignments. Please read the syllabus carefully! 
 </article>
 <hr/>
 
