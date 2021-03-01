@@ -1,0 +1,95 @@
+---
+title: "Quantile-Quantile Plots"
+author: "Jason Bryer"
+date: 2021-03-01
+draft: false
+categories: ["R"]
+tags: ["qqplots"]
+#summary: This post explores how R generates random numbers and the use of seeds.
+editor_options: 
+  chunk_output_type: console
+---
+
+Quantile-quantile plots are a useful tool for determining whether a measure is normally distributed. From [Wikipedia](https://en.wikipedia.org/wiki/Q–Q_plot):
+
+>> Q–Q (quantile-quantile) plot is a probability plot, which is a graphical method for comparing two probability distributions by plotting their quantiles against each other. First, the set of intervals for the quantiles is chosen. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). Thus the line is a parametric curve with the parameter which is the number of the interval for the quantile.
+
+```{r setup, echo=FALSE}
+library(tidyverse)
+library(reshape2)
+```
+
+Let's begin with a vector of values, `mpg` from the `mtcars` data frame. The plot below is a histogram of values, density of `mpg` in black, and normal distribution in blue.
+
+```{r, warning = FALSE}
+data(mtcars)
+x <- mtcars$mpg
+x <- x[order(x)] # Order the vector
+ggplot(mtcars, aes(x = mpg)) + 
+	geom_histogram(aes(y = ..density..), bins = 10, fill = 'grey50') +
+	geom_density() +
+	geom_function(fun = dnorm, 
+				  args = list(mean = mean(x), sd = sd(x)),
+				  color = 'blue') +
+	xlim(mean(x) - 3 * sd(x), mean(x) + 3 * sd(x))
+```
+
+To calculate the theoretical quantiles, we start with a vector of length equal to the original data (i.e. n = `r length(x)` in this example). The `ppoints` generates a sequence of probability points that are equally distributed between 0 and 1.
+
+```{r}
+( points <- ppoints(length(x)) )
+```
+
+Using the `qnorm` function we can calucate the quantile for each of these values.
+
+```{r}
+( y <- qnorm(points) )
+mean(y)
+sd(y)
+```
+
+Note that the mean and standard deviation are 0 and 1 (within rounding error), respectively, as would be expected from a standard normal distribution. We will no convert our observed values to z-scores and see how they pair up with the theoretical quantiles.
+
+```{r}
+z <- (x - mean(x)) / sd(x)
+df <- data.frame(ID = 1:length(x), Observed = x, Observed_z = z, Theoretical = y)
+head(df)
+
+ggplot(df, aes(x = Observed_z, y = 'Observed', xend = Theoretical, yend = 'Theoretical')) +
+	geom_point(aes(x = Observed_z, y = 'Observed'), color = 'red') +
+	geom_point(aes(x = Theoretical, y = 'Theoretical'), color = 'blue') +
+	geom_segment() + ylab('') + xlab('')
+```
+
+The points in blue are the theoretical quantiles and each is matched to a point in red which is the observed z-score. If the data points were perfectly normal, then all the lines would be vertical. The following plot shows the distributions of these to vectors. 
+
+```{r}
+ggplot(data.frame(Observation = c(rep('Observed', length(z)),
+								  rep('Theoretical', length(y))),
+				  Value = c(z, y)), aes(x = Value, color = Observation)) +
+	geom_density() +
+	geom_rug() +
+	scale_color_manual(values = c('Observed' = 'red', 'Theoretical' = 'blue')) +
+	ylab('') + xlab('z-score')
+```
+
+We can see that the distribution does vary from the normal. The q-q plot provides another way of visualizing the departure from the normal distribution.
+
+```{r}
+ggplot(df, aes(x = Observed, y = Theoretical)) + 
+	geom_point()
+```
+
+To add the line, we need to calculate the slope and intercept from two points that would fall exactly on the line if the distribution was perfectly normal.
+
+```{r}
+( x2 <- quantile(x, probs = c(0.25, 0.75)) ) # Using 25th and 75th percetile, but any two would work.
+( y2 <- qnorm(c(0.25, 0.75)) )
+slope <- diff(y2) / diff(x2)
+int <- y2[1L] - slope * x2[1L]
+
+ggplot(df, aes(x = Observed, y = Theoretical)) + 
+	geom_point() +
+	geom_abline(slope = slope, intercept = int)
+```
+

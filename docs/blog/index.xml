@@ -6,7 +6,17 @@
     <description>Recent content in Announcements on DATA 606 - Statistics &amp; Probability - Spring 2021</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quantile-Quantile Plots</title>
+      <link>/blog/2021-03-01-qqplots/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021-03-01-qqplots/</guid>
+      <description>Quantile-quantile plots are a useful tool for determining whether a measure is normally distributed. From Wikipedia:
+  Q–Q (quantile-quantile) plot is a probability plot, which is a graphical method for comparing two probability distributions by plotting their quantiles against each other. First, the set of intervals for the quantiles is chosen. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate).</description>
+    </item>
+    
     <item>
       <title>Distributions</title>
       <link>/blog/2021-02-24-distributions1/</link>
@@ -30,7 +40,7 @@
       
       <guid>/blog/2021-02-18-random_numbers_and_seeds/</guid>
       <description>To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] -0.4601964 rnorm(n = 1) ## [1] -1.024959 Each time you run the command you will get a different number.</description>
+rnorm(n = 1) ## [1] -0.7307153 rnorm(n = 1) ## [1] 0.2447132 Each time you run the command you will get a different number.</description>
     </item>
     
     <item>
