@@ -35,7 +35,7 @@
   Q–Q (quantile-quantile) plot is a probability plot, which is a graphical method for comparing two probability distributions by plotting their quantiles against each other. First, the set of intervals for the quantiles is chosen. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate).">
 <meta itemprop="datePublished" content="2021-03-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-03-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="756">
+<meta itemprop="wordCount" content="688">
 <meta itemprop="image" content="/images/og-image.png"/>
 
 
@@ -84,19 +84,6 @@
 <p>Q–Q (quantile-quantile) plot is a probability plot, which is a graphical method for comparing two probability distributions by plotting their quantiles against each other. First, the set of intervals for the quantiles is chosen. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). Thus the line is a parametric curve with the parameter which is the number of the interval for the quantile.</p>
 </blockquote>
 </blockquote>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-## ✓ tibble  3.0.6     ✓ dplyr   1.0.4
-## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-## ✓ readr   1.4.0     ✓ forcats 0.5.1</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre><code>## 
-## Attaching package: &#39;reshape2&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
-## 
-##     smiths</code></pre>
 <p>Let’s begin with a vector of values, <code>mpg</code> from the <code>mtcars</code> data frame. The plot below is a histogram of values, density of <code>mpg</code> in black, and normal distribution in blue.</p>
 <pre class="r"><code>data(mtcars)
 x &lt;- mtcars$mpg

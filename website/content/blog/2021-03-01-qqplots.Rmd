@@ -14,7 +14,7 @@ Quantile-quantile plots are a useful tool for determining whether a measure is n
 
 >> Q–Q (quantile-quantile) plot is a probability plot, which is a graphical method for comparing two probability distributions by plotting their quantiles against each other. First, the set of intervals for the quantiles is chosen. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). Thus the line is a parametric curve with the parameter which is the number of the interval for the quantile.
 
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE, error=FALSE}
 library(tidyverse)
 library(reshape2)
 ```
