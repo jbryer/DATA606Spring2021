@@ -36,9 +36,9 @@ histPlot(bdims$hgt, col = COL[1], xlab = "Height", ylab = "")
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=3}
 library(openintro)
-data(tgSpending)
+data(data(thanksgiving_spend))
 par(mar=c(3.7,2.2,0.5,0.5), las=1, mgp=c(2.5,0.7,0), cex.lab = 1.5)
-histPlot(tgSpending$spending, col = COL[1], xlab = "Spending", ylab = "")
+histPlot(data(thanksgiving_spend)$spending, col = COL[1], xlab = "Spending", ylab = "")
 ```
 
 (a) We are 95% confident that the average spending of these 436 American adults is between $80.31 and $89.11.
