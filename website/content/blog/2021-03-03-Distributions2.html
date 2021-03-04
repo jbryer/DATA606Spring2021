@@ -1,0 +1,43 @@
+---
+title: "Distributions Part 2"
+author: "Jason Bryer"
+date: 2021-03-03
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Here is a recording of the Summarizing Data Meetup. <a href="/slides/04b-Distributions#1">Click here</a> to open the slides. <a href="http://www.math.wm.edu/~leemis/chart/UDR/UDR.html">Univariate distribution relationships</a>. <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">Essence of calculus video series</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<!--more-->
+<p>Here is a recording of the Summarizing Data Meetup. <a href="/slides/04b-Distributions#1">Click here</a> to open the slides. <a href="http://www.math.wm.edu/~leemis/chart/UDR/UDR.html">Univariate distribution relationships</a>. <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">Essence of calculus video series</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Here is the R code from class:</p>
+<pre class="r"><code>n &lt;- 5
+p &lt;- 0.35
+# p &lt;- .65
+
+probs &lt;- dbinom(0:n, n, p)
+probs
+sum(probs)
+
+barplot(dbinom(0:n, n, p), names.arg=0:n)
+
+x &lt;- rnorm(100)
+
+ggplot(data.frame(x = x), aes(x = x)) +
+    geom_histogram(bins = 10, fill = &#39;grey70&#39;) +
+    geom_vline(xintercept = mean(x), color = &#39;blue&#39;) +
+    geom_vline(xintercept = c(mean(x) - sd(x), mean(x) + sd(x)), color = &#39;darkgreen&#39;)
+
+ggplot(data.frame(x = x), aes(x = x)) +
+    geom_histogram(aes(y = ..density..), bins = 10, fill = &#39;grey70&#39;) +
+    geom_vline(xintercept = mean(x), color = &#39;blue&#39;) +
+    geom_function(fun = dnorm) +
+    geom_vline(xintercept = c(mean(x) - sd(x), mean(x) + sd(x)), color = &#39;darkgreen&#39;)</code></pre>

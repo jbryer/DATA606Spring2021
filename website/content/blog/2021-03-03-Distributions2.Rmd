@@ -1,0 +1,47 @@
+---
+title: "Distributions Part 2"
+author: "Jason Bryer"
+date: 2021-03-03
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+
+Here is a recording of the Summarizing Data Meetup. [Click here](/slides/04b-Distributions#1) to open the slides. [Univariate distribution relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html). [Essence of calculus video series](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--more-->
+
+Here is a recording of the Summarizing Data Meetup. [Click here](/slides/04b-Distributions#1) to open the slides. [Univariate distribution relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html). [Essence of calculus video series](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here is the R code from class:
+
+```{r, eval=FALSE}
+n <- 5
+p <- 0.35
+# p <- .65
+
+probs <- dbinom(0:n, n, p)
+probs
+sum(probs)
+
+barplot(dbinom(0:n, n, p), names.arg=0:n)
+
+x <- rnorm(100)
+
+ggplot(data.frame(x = x), aes(x = x)) +
+	geom_histogram(bins = 10, fill = 'grey70') +
+	geom_vline(xintercept = mean(x), color = 'blue') +
+	geom_vline(xintercept = c(mean(x) - sd(x), mean(x) + sd(x)), color = 'darkgreen')
+
+ggplot(data.frame(x = x), aes(x = x)) +
+	geom_histogram(aes(y = ..density..), bins = 10, fill = 'grey70') +
+	geom_vline(xintercept = mean(x), color = 'blue') +
+	geom_function(fun = dnorm) +
+	geom_vline(xintercept = c(mean(x) - sd(x), mean(x) + sd(x)), color = 'darkgreen')
+```

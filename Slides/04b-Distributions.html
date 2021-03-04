@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Distributions - Part 2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jason Bryer, Ph.D." />
+    <meta name="date" content="2021-03-03" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/mtheme_max.css" type="text/css" />
+    <link rel="stylesheet" href="assets/fonts_mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Distributions - Part 2
+## DATA 606 - Statistics &amp; Probability for Data Analytics
+### Jason Bryer, Ph.D.
+### March 3, 2021
+
+---
+
+
+
+
+class: font140
+# Homework Presentations
+
+* 4.14	Alexander Bae
+* 4.35	Joshua Hummell
+* 4.37	Carlisle Ferguson
+
+---
+class: font120
+# Milgram Experiment
+
+.pull-left[.font120[
+* Stanley Milgram conducted a series of experiments on obedience to authority starting in 1963.
+* Experimenter (E) orders the teacher (T), the subject of the experiment, to give severe electric shocks to a learner (L) each time the learner answers a question incorrectly.
+]]
+.pull-right[
+&lt;img src='images/milgram.png' height='500'&gt;
+]
+
+---
+class: font130
+# Milgram Experiment (cont.)
+
+* The learner is actually an actor, and the electric shocks are not real, but a prerecorded sound is played each time the teacher administers an electric shock.
+* These experiments measured the willingness of study participants to obey an authority figure who instructed them to perform acts that conflicted with their personal conscience.
+* Milgram found that about 65% of people would obey authority and give such shocks.
+* Over the years, additional research suggested this number is approximately consistent across communities and time.
+
+---
+# Bernoulli Sequences
+
+* Each person in Milgram’s experiment can be thought of as a trial.
+* A person is labeled a success if she refuses to administer a severe shock, and failure if she administers such shock.
+* Since only 35% of people refused to administer a shock, probability of success is p = 0.35.
+* When an individual trial has only two possible outcomes, it is called a **Bernoulli** random variable.
+
+A random variable X has a *Bernoulli distribution* with parameter *p* if
+
+$$ P(X=1) = p \quad and \quad P(X=0) = 1 - p $$
+for `\(0 &lt; p &lt; 1\)`
+
+
+---
+# Geometric distribution
+
+Dr. Smith wants to repeat Milgrams experiments but she only wants to sample people until she finds someone who will not inflict a severe shock. What is the probability that she stops after the first person?
+
+
+`$$P(1^{st}\quad person\quad refuses) =  0.35$$`
+
+the third person?
+
+$$ P(1^{st} and 2^{nd} shock, 3^{rd} refuses) = \frac{S}{0.65} \times \frac{S}{0.65} \times \frac{R}{0.35} = 0.65^{2} \times 0.35 \approx 0.15 $$
+
+the tenth person?
+
+---
+# Geometric distribution (cont.)
+
+Geometric distribution describes the waiting time until a success for *independent and identically distributed* (iid) Bernouilli random variables.
+
+* independence: outcomes of trials don’t affect each other 
+* identical: the probability of success is the same for each trial
+
+Geometric probabilities
+
+If `\(p\)` represents probability of success, `\((1 − p)\)` represents probability of failure, and n represents number of independent trials
+
+`$$P(success\quad on\quad the\quad { n }^{ th }\quad trial) = (1 − p)^{n−1}p$$`
+
+---
+# Expected value
+
+How many people is Dr. Smith expected to test before finding the first one that refuses to administer the shock?
+
+The expected value, or the mean, of a geometric distribution is
+defined as `\(\frac{1}{p}\)`.
+
+$$ \mu = \frac{1}{p} = \frac{1}{0.35} = 2.86 $$
+
+She is expected to test 2.86 people before finding the first one that refuses to administer the shock.
+
+But how can she test a non-whole number of people?
+
+---
+# Expected value and its variability
+
+&lt;center&gt;&lt;table width='80%'&gt;&lt;tr&gt;&lt;td align='center'&gt;
+$$ \mu = \frac{1}{p} $$
+&lt;/td&gt;&lt;td align='center'&gt;
+$$ \sigma = \sqrt{\frac{1-p}{p^2}} $$
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/center&gt;
+
+Going back to Dr. Smith’s experiment:
+
+$$ \sigma = \sqrt{\frac{1-p}{p^2}} = \sqrt{\frac{1-0.35}{0.35^2}} = 2.3 $$
+
+Dr. Smith is expected to test 2.86 people before finding the first one that refuses to administer the shock, give or take 2.3 people.
+
+These values only make sense in the context of repeating the experiment many many times.
+
+
+---
+# Milgram Part 2
+
+Suppose we randomly select four individuals to participate in this experiment. What is the probability that exactly 1 of them will refuse to administer the shock
+
+Let’s call these people Allen (A), Brittany (B), Caroline (C), and Damian (D). Each one of the four scenarios below will satisfy the condition of “exactly 1 of them refuses to administer the shock”:
+
+.center[
+![](images/milgram2.png)
+]
+
+The probability of exactly one 1 of 4 people refusing to administer the shock is the sum of all of these probabilities.
+
+0.0961 + 0.0961 + 0.0961 + 0.0961 = 4 × 0.0961 = 0.3844
+
+---
+# Binomial distribution
+
+The question from the prior slide asked for the probability of given number of successes, k, in a given number of trials, n, (k = 1 success in n = 4 trials), and we calculated this probability as
+
+`$$# of scenarios × P(single scenario)$$`
+
+Number of scenarios: there is a less tedious way to figure this out, we’ll get to that shortly...
+
+`$$P(single \quad scenario) = p^k (1 − p)^{(n−k)}$$`
+
+The *Binomial* distribution describes the probability of having exactly k successes in n independent Bernouilli trials with probability of success p.
+
+
+---
+# Choose Function
+
+The choose function is useful for calculating the number of ways to choose k successes in n trials.
+
+$$ \left( \begin{matrix} n \\ k \end{matrix} \right) =\frac { n! }{ k!(n-k)! }  $$
+
+For example, :
+
+$$ \left( \begin{matrix} 9 \\ 2 \end{matrix} \right) =\frac { 9! }{ 2!(9-2)! } =\frac { 9\times 8\times 7! }{ 2\times 1\times 7! } =\frac { 72 }{ 2 } =36 $$
+
+
+```r
+choose(9,2)
+```
+
+```
+## [1] 36
+```
+
+---
+# Binomial distribution
+
+If p represents probability of success, (1 − p) represents probability of failure, n represents number of independent trials, and k represents number of successes
+
+$$ P(k\quad successes\quad in\quad n\quad trials)=\left( \begin{matrix} n \\ k \end{matrix} \right) { p }^{ k }{ (1-p) }^{ (n-k) } $$
+
+
+---
+# Binomial distribution 
+
+
+```r
+n &lt;- 4
+p &lt;- 0.35
+barplot(dbinom(0:n, n, p), names.arg=0:n)
+```
+
+&lt;img src="04b-Distributions_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+```r
+dbinom(1, 4, p)
+```
+
+```
+## [1] 0.384475
+```
+
+---
+class: left, font150
+# One Minute Paper
+
+Complete the one minute paper: 
+https://forms.gle/gY9SeBCPggHEtZYw6
+
+1. What was the most important thing you learned during this class?
+2. What important question remains unanswered for you?
+
+ 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLanguage": "R",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!-- Source: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/ -->
+<style>
+.logo {
+  background-image: url(images/hex/DATA606.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 2em;
+  right: 0.5em;
+  width: 55px;
+  height: 64px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

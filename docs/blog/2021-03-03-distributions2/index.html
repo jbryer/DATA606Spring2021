@@ -3,10 +3,10 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Random Numbers and Seeds in R - DATA 606 - Statistics &amp; Probability - Spring 2021</title>
+<title>Distributions Part 2 - DATA 606 - Statistics &amp; Probability - Spring 2021</title>
 <meta name="generator" content="Hugo 0.78.1" />
 <link href="//index.xml" rel="alternate" type="application/rss+xml">
-<link rel="canonical" href="/blog/2021-02-18-random_numbers_and_seeds/">
+<link rel="canonical" href="/blog/2021-03-03-distributions2/">
 <link rel="stylesheet" href="/css/theme.min.css">
 <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <link rel="stylesheet" href="/css/chroma.min.css">
@@ -16,31 +16,49 @@
 <script src="/js/bundle.js"></script><style>
 :root {--custom-background-color: #005DAC;}
 </style>
-<meta property="og:title" content="Random Numbers and Seeds in R" />
-<meta property="og:description" content="To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] 0.463405 rnorm(n = 1) ## [1] 1.87497 Each time you run the command you will get a different number." />
+<meta property="og:title" content="Distributions Part 2" />
+<meta property="og:description" content="
+
+
+
+Here is a recording of the Summarizing Data Meetup. Click here to open the slides. Univariate distribution relationships. Essence of calculus video series.
+
+
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2021-02-18-random_numbers_and_seeds/" />
+<meta property="og:url" content="/blog/2021-03-03-distributions2/" />
 <meta property="og:image" content="/images/og-image.png"/>
-<meta property="article:published_time" content="2021-02-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-02-18T00:00:00+00:00" /><meta property="og:site_name" content="DATA 606" />
+<meta property="article:published_time" content="2021-03-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-03T00:00:00+00:00" /><meta property="og:site_name" content="DATA 606" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/og-image.png"/>
 
-<meta name="twitter:title" content="Random Numbers and Seeds in R"/>
-<meta name="twitter:description" content="To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] 0.463405 rnorm(n = 1) ## [1] 1.87497 Each time you run the command you will get a different number."/>
-<meta itemprop="name" content="Random Numbers and Seeds in R">
-<meta itemprop="description" content="To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] 0.463405 rnorm(n = 1) ## [1] 1.87497 Each time you run the command you will get a different number.">
-<meta itemprop="datePublished" content="2021-02-18T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-02-18T00:00:00+00:00" />
-<meta itemprop="wordCount" content="247">
+<meta name="twitter:title" content="Distributions Part 2"/>
+<meta name="twitter:description" content="
+
+
+
+Here is a recording of the Summarizing Data Meetup. Click here to open the slides. Univariate distribution relationships. Essence of calculus video series.
+
+
+"/>
+<meta itemprop="name" content="Distributions Part 2">
+<meta itemprop="description" content="
+
+
+
+Here is a recording of the Summarizing Data Meetup. Click here to open the slides. Univariate distribution relationships. Essence of calculus video series.
+
+
+">
+<meta itemprop="datePublished" content="2021-03-03T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-03-03T00:00:00+00:00" />
+<meta itemprop="wordCount" content="125">
 <meta itemprop="image" content="/images/og-image.png"/>
 
 
 
-<meta itemprop="keywords" content="random numbers," />
+<meta itemprop="keywords" content="Annoucement," />
 <link href='/fullcalendar-lib/main.css' rel='stylesheet' />
 <script src='/fullcalendar-lib/main.js'></script>
 
@@ -74,36 +92,32 @@ rnorm(n = 1) ## [1] 0.463405 rnorm(n = 1) ## [1] 1.87497 Each time you run the c
 </nav>
 </div>
 <div class="content-container">
-<main><h1>Random Numbers and Seeds in R</h1>
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<main><h1>Distributions Part 2</h1><p>Here is a recording of the Summarizing Data Meetup. <a href="/slides/04b-Distributions#1">Click here</a> to open the slides. <a href="http://www.math.wm.edu/~leemis/chart/UDR/UDR.html">Univariate distribution relationships</a>. <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">Essence of calculus video series</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Here is the R code from class:</p>
+<pre class="r"><code>n &lt;- 5
+p &lt;- 0.35
+# p &lt;- .65
 
+probs &lt;- dbinom(0:n, n, p)
+probs
+sum(probs)
 
-<p>To explore how R generates random numbers, we will use the <code>rnorm</code> function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the <code>mean</code> and <code>sd</code> parameters). With <code>n = 1</code> we will get one random number.</p>
-<pre class="r"><code>rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.463405</code></pre>
-<pre class="r"><code>rnorm(n = 1)</code></pre>
-<pre><code>## [1] 1.87497</code></pre>
-<p>Each time you run the command you will get a different number. The <code>set.seed</code> function will sets a seed to the random number generator so that each subsequent run will produce the same number.</p>
-<pre class="r"><code>set.seed(2112); rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.9243372</code></pre>
-<pre class="r"><code>set.seed(2112); rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.9243372</code></pre>
-<p>Setting a different seed results in a different number.</p>
-<pre class="r"><code>set.seed(2113); rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.5499032</code></pre>
-<p><strong>What are seeds?</strong></p>
-<p>Computers are actually bad at random events. However, there are good algorithms that mimic random processes (hence psydo random). These algorithms work by starting with some initial value, a seed, and executing a complex algorithm that approximates randomization. The seed is often set to the current time in milliseconds. To visualize the random process, we will use the <code>sample</code> function to randomly select a number between 1 and 100. We will consider the ouput for the first 1,000 seeds.</p>
-<pre class="r"><code>random_numbers &lt;- integer(1000)
-for(i in seq_len(length(random_numbers))) {
-    set.seed(i)
-    random_numbers[i] &lt;- sample(1:100, size = 1)
-}
-library(ggplot2)
-ggplot(data.frame(x = 1:100, y = random_numbers),
-       aes(x = x, y = y)) + 
-    geom_point() +
-    xlab(&#39;Seed&#39;) + ylab(&#39;Random Number&#39;)</code></pre>
-<p><img src="/blog/2021-02-18-random_numbers_and_seeds_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+barplot(dbinom(0:n, n, p), names.arg=0:n)
+
+x &lt;- rnorm(100)
+
+ggplot(data.frame(x = x), aes(x = x)) +
+    geom_histogram(bins = 10, fill = &#39;grey70&#39;) +
+    geom_vline(xintercept = mean(x), color = &#39;blue&#39;) +
+    geom_vline(xintercept = c(mean(x) - sd(x), mean(x) + sd(x)), color = &#39;darkgreen&#39;)
+
+ggplot(data.frame(x = x), aes(x = x)) +
+    geom_histogram(aes(y = ..density..), bins = 10, fill = &#39;grey70&#39;) +
+    geom_vline(xintercept = mean(x), color = &#39;blue&#39;) +
+    geom_function(fun = dnorm) +
+    geom_vline(xintercept = c(mean(x) - sd(x), mean(x) + sd(x)), color = &#39;darkgreen&#39;)</code></pre>
 <footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>

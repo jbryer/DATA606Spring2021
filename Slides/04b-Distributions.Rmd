@@ -1,8 +1,8 @@
 ---
-title: "Distributions"
+title: "Distributions - Part 2"
 subtitle: "DATA 606 - Statistics & Probability for Data Analytics"
 author: Jason Bryer, Ph.D.
-date: "February 24, 2021"
+date: "March 3, 2021"
 output:
   xaringan::moon_reader:
     css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
@@ -59,34 +59,15 @@ hexes <- function(x) {
 # dplyr based upon https://allisonhorst.shinyapps.io/dplyr-learnr/#section-welcome
 ```
 
-# One Minute Paper Results
-
-```{r, echo=FALSE}
-library(googlesheets4)
-omp <- read_sheet('https://docs.google.com/spreadsheets/d/1vMgo-BhGiSF1DTpf9IbjKdekyAZsslFUV5xzUN7O6pg/edit#gid=965448308')
-omp <- omp %>% dplyr::filter(Topic == 'Probability (Chapter 3)')
-source('word_cloud.R')
-```
-
-.pull-left[
-**What was the most important thing you learned during this class?**
-```{r, echo=FALSE, fig.height=9}
-ompWordCloud(omp$`What was the most important thing you learned during this class?`)
-```
-]
-.pull-right[
-**What important question remains unanswered for you?**
-```{r, echo=FALSE, fig.height=9}
-ompWordCloud(omp$`What important question remains unanswered for you?`)
-```
-]
-
----
+class: font140
 # Homework Presentations
 
-* 	
+* 4.14	Alexander Bae
+* 4.35	Joshua Hummell
+* 4.37	Carlisle Ferguson
 
 ---
+class: font120
 # Milgram Experiment
 
 .pull-left[.font120[
@@ -98,7 +79,7 @@ ompWordCloud(omp$`What important question remains unanswered for you?`)
 ]
 
 ---
-class: font120
+class: font130
 # Milgram Experiment (cont.)
 
 * The learner is actually an actor, and the electric shocks are not real, but a prerecorded sound is played each time the teacher administers an electric shock.
@@ -107,7 +88,6 @@ class: font120
 * Over the years, additional research suggested this number is approximately consistent across communities and time.
 
 ---
-class: font120
 # Bernoulli Sequences
 
 * Each person in Milgram’s experiment can be thought of as a trial.
@@ -192,8 +172,7 @@ Let’s call these people Allen (A), Brittany (B), Caroline (C), and Damian (D).
 ![](images/milgram2.png)
 ]
 
-The probability of exactly one 1 of 4 people refusing to administer the
-￼￼￼￼shock is the sum of all of these probabilities.
+The probability of exactly one 1 of 4 people refusing to administer the shock is the sum of all of these probabilities.
 
 0.0961 + 0.0961 + 0.0961 + 0.0961 = 4 × 0.0961 = 0.3844
 
