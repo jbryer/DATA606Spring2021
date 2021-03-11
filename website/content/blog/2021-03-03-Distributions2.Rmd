@@ -9,13 +9,13 @@ tags: ["Annoucement"]
 ---
 
 
-Here is a recording of the Summarizing Data Meetup. [Click here](/slides/04b-Distributions#1) to open the slides. [Univariate distribution relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html). [Essence of calculus video series](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
+[Click here](/slides/04b-Distributions#1) to open the slides. [Univariate distribution relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html). [Essence of calculus video series](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!--more-->
 
-Here is a recording of the Summarizing Data Meetup. [Click here](/slides/04b-Distributions#1) to open the slides. [Univariate distribution relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html). [Essence of calculus video series](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
+[Click here](/slides/04b-Distributions#1) to open the slides. [Univariate distribution relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html). [Essence of calculus video series](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3HwZU52k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
