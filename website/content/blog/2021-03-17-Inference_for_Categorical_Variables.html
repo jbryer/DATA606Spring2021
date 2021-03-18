@@ -1,0 +1,49 @@
+---
+title: "Inference for Categorical Data"
+author: "Jason Bryer"
+date: 2021-03-17
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><a href="/slides/06-Inference_for_Categorical_Data.html#1">Click here</a> to open the slides.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RVsfo-DEGLQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<!--more-->
+<p><a href="/slides/06-Inference_for_Categorical_Data.html#1">Click here</a> to open the slides.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RVsfo-DEGLQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Here is the R script from class.</p>
+<pre class="r"><code>library(tidyverse)
+
+p_hat &lt;- 0.657
+n &lt;- 680 + 105
+
+# Create a table that mimics the resulting counts
+df &lt;- data.frame(
+  Group = c(rep(&#39;Duke&#39;, 69 + 36), rep(&#39;American&#39;, 454+226)),
+  Respone = c(rep(&#39;Yes&#39;, 69), rep(&#39;No&#39;, 36), rep(&#39;Yes&#39;, 454) , rep(&#39;No&#39;, 226)
+  )
+)
+
+table(df$Group, df$Respone) # Verify the counts are the same
+
+# Estimate the bootstrap sample
+boots &lt;- numeric()
+for(i in 1:1000) {
+  temp &lt;- df[sample(nrow(df), size = nrow(df), replace = TRUE),]
+  temp2 &lt;- table(temp$Group, temp$Respone) %&gt;% prop.table(1)
+  boots[i] &lt;- diff(temp2[,2])
+}
+mean(boots)
+sd(boots)
+
+# 95% Confidence Interval
+c(mean(boots) - 1.96 * sd(boots), mean(boots) + 1.96 * sd(boots))
+# Bootstrap distribution
+hist(boots)</code></pre>

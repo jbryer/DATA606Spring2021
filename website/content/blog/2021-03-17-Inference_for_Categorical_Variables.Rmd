@@ -1,0 +1,52 @@
+---
+title: "Inference for Categorical Data"
+author: "Jason Bryer"
+date: 2021-03-17
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+[Click here](/slides/06-Inference_for_Categorical_Data.html#1) to open the slides.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RVsfo-DEGLQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--more-->
+
+[Click here](/slides/06-Inference_for_Categorical_Data.html#1) to open the slides.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RVsfo-DEGLQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here is the R script from class.
+
+```{r, eval=FALSE}
+library(tidyverse)
+
+p_hat <- 0.657
+n <- 680 + 105
+
+# Create a table that mimics the resulting counts
+df <- data.frame(
+  Group = c(rep('Duke', 69 + 36), rep('American', 454+226)),
+  Respone = c(rep('Yes', 69), rep('No', 36), rep('Yes', 454) , rep('No', 226)
+  )
+)
+
+table(df$Group, df$Respone) # Verify the counts are the same
+
+# Estimate the bootstrap sample
+boots <- numeric()
+for(i in 1:1000) {
+  temp <- df[sample(nrow(df), size = nrow(df), replace = TRUE),]
+  temp2 <- table(temp$Group, temp$Respone) %>% prop.table(1)
+  boots[i] <- diff(temp2[,2])
+}
+mean(boots)
+sd(boots)
+
+# 95% Confidence Interval
+c(mean(boots) - 1.96 * sd(boots), mean(boots) + 1.96 * sd(boots))
+# Bootstrap distribution
+hist(boots)
+```
