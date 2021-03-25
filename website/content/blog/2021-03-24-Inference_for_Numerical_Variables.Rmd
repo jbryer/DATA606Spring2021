@@ -1,0 +1,44 @@
+---
+title: "Inference for Numerical Data"
+author: "Jason Bryer"
+date: 2021-03-24
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+[Click here](/slides/07-Inference_for_Numerical_Data.html#1) to open the slides.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tA7XN7CW8K0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--more-->
+
+[Click here](/slides/07-Inference_for_Numerical_Data.html#1) to open the slides.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tA7XN7CW8K0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here is the R script from class.
+
+```{r, eval=FALSE}
+library(tidyverse)
+library(reshape2)
+data(hsb2)
+
+head(hsb2)
+
+my_hsb2 <- hsb2 %>% select(id, read, write, math, science, socst)
+head(my_hsb2)
+nrow(my_hsb2)
+
+my_hsb2_melt <- melt(my_hsb2, id.vars = 'id')
+head(my_hsb2_melt)
+nrow(my_hsb2_melt)
+
+ggplot(my_hsb2_melt, aes(x = variable, y = value)) + geom_boxplot()
+
+x <- seq(-1, 1, by = 0.01)
+x
+
+plot(x, dt(x, df = 10), type = 'l')
+```

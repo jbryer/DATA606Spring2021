@@ -1,0 +1,41 @@
+---
+title: "Inference for Numerical Data"
+author: "Jason Bryer"
+date: 2021-03-24
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><a href="/slides/07-Inference_for_Numerical_Data.html#1">Click here</a> to open the slides.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tA7XN7CW8K0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<!--more-->
+<p><a href="/slides/07-Inference_for_Numerical_Data.html#1">Click here</a> to open the slides.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tA7XN7CW8K0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Here is the R script from class.</p>
+<pre class="r"><code>library(tidyverse)
+library(reshape2)
+data(hsb2)
+
+head(hsb2)
+
+my_hsb2 &lt;- hsb2 %&gt;% select(id, read, write, math, science, socst)
+head(my_hsb2)
+nrow(my_hsb2)
+
+my_hsb2_melt &lt;- melt(my_hsb2, id.vars = &#39;id&#39;)
+head(my_hsb2_melt)
+nrow(my_hsb2_melt)
+
+ggplot(my_hsb2_melt, aes(x = variable, y = value)) + geom_boxplot()
+
+x &lt;- seq(-1, 1, by = 0.01)
+x
+
+plot(x, dt(x, df = 10), type = &#39;l&#39;)</code></pre>
