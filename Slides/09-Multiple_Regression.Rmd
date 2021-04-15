@@ -1,0 +1,146 @@
+---
+title: "Linear Regression Part 2"
+subtitle: "DATA 606 - Statistics & Probability for Data Analytics"
+author: Jason Bryer, Ph.D.
+date: "April 14, 2021"
+output:
+  xaringan::moon_reader:
+    css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
+    self_contained: true
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: R
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+    includes:
+      in_header: [assets/header.html]
+      after_body: [assets/insert-logo.html]
+params:
+  github_link: "DATA606Spring2021"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+# remotes::install_github("gadenbuie/countdown")
+# remotes::install_github("mitchelloharawild/icon")
+# icon::download_fontawesome()
+library(knitr)
+library(tidyverse)
+library(countdown)
+library(openintro)
+library(DATA606)
+library(reshape2)
+library(latex2exp)
+library(psych)
+
+set.seed(2112)
+
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, error = FALSE, 
+					  fig.width = 12, fig.height=6.5, fig.align = 'center',
+					  digits = 3) 
+options(width = 120)
+# The following is to fix a DT::datatable issue with Xaringan
+# https://github.com/yihui/xaringan/issues/293
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+
+# This style was adapted from Max Kuhn: https://github.com/rstudio-conf-2020/applied-ml
+# And Rstudio::conf 2020: https://github.com/rstudio-conf-2020/slide-templates/tree/master/xaringan
+# This slide deck shows a lot of the features of Xaringan: https://www.kirenz.com/slides/xaringan-demo-slides.html
+
+# To use, add this to the slide title:   `r I(hexes(c("DATA606")))`
+# It will use images in the images/hex_stickers directory (i.e. the filename is the paramter)
+hexes <- function(x) {
+  x <- rev(sort(x))
+  markup <- function(pkg) glue::glue('<img src="images/hex/{pkg}.png" class="title-hex">')
+  res <- purrr::map_chr(x, markup)
+  paste0(res, collapse = "")
+}
+
+# Cartoons from https://github.com/allisonhorst/stats-illustrations
+# dplyr based upon https://allisonhorst.shinyapps.io/dplyr-learnr/#section-welcome
+
+
+```
+
+# One Minute Paper Results
+
+```{r, echo=FALSE}
+library(googlesheets4)
+omp <- read_sheet('https://docs.google.com/spreadsheets/d/1vMgo-BhGiSF1DTpf9IbjKdekyAZsslFUV5xzUN7O6pg/edit#gid=965448308')
+omp <- omp %>% dplyr::filter(Topic == 'Linear Regression (Chapter 8)')
+source('word_cloud.R')
+```
+
+.pull-left[
+**What was the most important thing you learned during this class?**
+```{r, echo=FALSE, fig.height=9}
+ompWordCloud(omp$`What was the most important thing you learned during this class?`)
+```
+]
+.pull-right[
+**What important question remains unanswered for you?**
+```{r, echo=FALSE, fig.height=9}
+ompWordCloud(omp$`What important question remains unanswered for you?`)
+```
+]
+
+---
+class: inverse, middle, center
+# Data Project
+
+---
+class: font80
+# Checklist / Suggested Outline
+
+* Overview slide
+	* Context on the data collection
+	* Description of the dependent variable (what is being measured)
+	* Description of the independent variable (what is being measured; include at least 2 variables)
+	* Research question
+* Summary statistics
+* Include appropriate data visualizations.
+* Statistical output
+	* Include the appropriate statistics for your method used.
+	* For null hypothesis tests (e.g. t-test, chi-squared, ANOVA, etc.), state the null and alternative hypotheses along with relevant statistic and p-value (and confidence interval if appropriate).
+	* For regression models, include the regression output and interpret the R-squared value.
+* Conclusion
+	* Why is this analysis important?
+	* Limitations of the analysis?
+
+---
+# Criteria for Grading
+
+* Data is presented to support the conslusions using the appropriate analysis (i.e. the statistical method chosen supports the research question).
+
+* Suitable tables summarize data in a clear and meaningful way even to those unfamiliar with the project.
+
+* Suitable graphics summarize data in a clear and meaningful way even to those unfamiliar with the project.
+
+* Data reviewed and analyzed accurately and coherently.
+
+* Proper use of descriptive and/or inferential statistics.
+
+---
+class: font140
+# Homework Presentations
+
+* 
+
+
+---
+class: left
+# One Minute Paper
+
+.font150[
+Complete the one minute paper: 
+https://forms.gle/gY9SeBCPggHEtZYw6
+
+1. What was the most important thing you learned during this class?
+2. What important question remains unanswered for you?
+]
+
