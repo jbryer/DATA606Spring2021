@@ -53,7 +53,7 @@ Click here to open the slides.
 ">
 <meta itemprop="datePublished" content="2021-04-21T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-04-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="938">
+<meta itemprop="wordCount" content="901">
 <meta itemprop="image" content="/images/og-image.png"/>
 
 
@@ -96,22 +96,18 @@ Click here to open the slides.
 <p><a href="https://shiny.rit.albany.edu/stat/mod2/">Shiny app to visualize interactions, simple main effects, simple slopes and model surfaces in 2-IV linear models</a></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/e27sxMFHzKM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p>Here is the R script for analyzing the tutorial dataset:</p>
-<pre class="r"><code>library(openintro)</code></pre>
-<pre><code>## Loading required package: airports</code></pre>
-<pre><code>## Loading required package: cherryblossom</code></pre>
-<pre><code>## Loading required package: usdata</code></pre>
-<pre class="r"><code>library(ggplot2)
+<div id="here-is-the-r-script-for-analyzing-the-tutorial-dataset" class="section level3">
+<h3>Here is the R script for analyzing the tutorial dataset:</h3>
+<pre class="r"><code>library(openintro)
+library(ggplot2)
 
 data(&quot;tourism&quot;, package = &#39;openintro&#39;) # Question 8.21
 
 ggplot(tourism, aes(x = visitor_count_tho)) +
     geom_histogram()</code></pre>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>ggplot(tourism, aes(x = tourist_spending)) +
     geom_histogram()</code></pre>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
 <pre class="r"><code>ggplot(tourism, aes(x = visitor_count_tho, y = tourist_spending)) +
     geom_point() +
@@ -176,7 +172,9 @@ ggplot(tourism, aes(x = tourist_spending, y = residual)) +
 <p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
 <pre class="r"><code>ggplot(tourism, aes(x = residual)) + geom_density()</code></pre>
 <p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
-<p>Here is the R script that looks at how the F-statistic is calculated.</p>
+</div>
+<div id="here-is-the-r-script-that-looks-at-how-the-f-statistic-is-calculated." class="section level3">
+<h3>Here is the R script that looks at how the F-statistic is calculated.</h3>
 <pre class="r"><code>poverty &lt;- read.table(&quot;https://raw.githubusercontent.com/jbryer/DATA606Spring2021/master/course_data/poverty.txt&quot;, h = T, sep = &quot;\t&quot;)
 names(poverty) &lt;- c(&quot;state&quot;, &quot;metro_res&quot;, &quot;white&quot;, &quot;hs_grad&quot;, &quot;poverty&quot;, &quot;female_house&quot;)
 poverty &lt;- poverty[,c(1,5,2,3,4,6)]
@@ -275,6 +273,7 @@ SSmodel &lt;- SSy - SSresid
 k &lt;- length(lm.out2$coefficients) - 1
 ((SSmodel) / k) / (SSresid / (n - (k + 1)))</code></pre>
 <pre><code>## [1] 9.952561</code></pre>
+</div>
 <footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>

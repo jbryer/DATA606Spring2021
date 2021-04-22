@@ -20,9 +20,9 @@ tags: ["Annoucement"]
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/e27sxMFHzKM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Here is the R script for analyzing the tutorial dataset:
+### Here is the R script for analyzing the tutorial dataset:
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, message=FALSE, warning=FALSE}
 library(openintro)
 library(ggplot2)
 
@@ -63,9 +63,9 @@ ggplot(tourism, aes(x = residual)) + geom_density()
 ```
 
 
-Here is the R script that looks at how the F-statistic is calculated.
+### Here is the R script that looks at how the F-statistic is calculated.
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, message=FALSE, warning=FALSE}
 poverty <- read.table("https://raw.githubusercontent.com/jbryer/DATA606Spring2021/master/course_data/poverty.txt", h = T, sep = "\t")
 names(poverty) <- c("state", "metro_res", "white", "hs_grad", "poverty", "female_house")
 poverty <- poverty[,c(1,5,2,3,4,6)]
