@@ -1,0 +1,200 @@
+---
+title: "Multiple Linear Regression"
+author: "Jason Bryer"
+date: 2021-04-21
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><a href="/slides/09-Multiple_Linear_Regression.html#1">Click here</a> to open the slides.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e27sxMFHzKM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<!--more-->
+<p><a href="/slides/09-Multiple_Linear_Regression.html#1">Click here</a> to open the slides.</p>
+<p><a href="https://shiny.rit.albany.edu/stat/mod2/">Shiny app to visualize interactions, simple main effects, simple slopes and model surfaces in 2-IV linear models</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e27sxMFHzKM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Here is the R script for analyzing the tutorial dataset:</p>
+<pre class="r"><code>library(openintro)</code></pre>
+<pre><code>## Loading required package: airports</code></pre>
+<pre><code>## Loading required package: cherryblossom</code></pre>
+<pre><code>## Loading required package: usdata</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+data(&quot;tourism&quot;, package = &#39;openintro&#39;) # Question 8.21
+
+ggplot(tourism, aes(x = visitor_count_tho)) +
+    geom_histogram()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(tourism, aes(x = tourist_spending)) +
+    geom_histogram()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre class="r"><code>ggplot(tourism, aes(x = visitor_count_tho, y = tourist_spending)) +
+    geom_point() +
+    geom_smooth(method = &#39;lm&#39;, se = FALSE, formula = y ~ x) +
+    scale_x_log10() + scale_y_log10()</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<pre class="r"><code>lm.out &lt;- lm(visitor_count_tho ~ tourist_spending, data = tourism)
+summary(lm.out)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = visitor_count_tho ~ tourist_spending, data = tourism)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1672.01  -377.84     3.28   410.00  2674.76 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      636.75289  151.86868   4.193 0.000127 ***
+## tourist_spending   1.49912    0.02466  60.786  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 815.9 on 45 degrees of freedom
+## Multiple R-squared:  0.988,  Adjusted R-squared:  0.9877 
+## F-statistic:  3695 on 1 and 45 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>lm.out.log &lt;- lm(log(visitor_count_tho) ~ log(tourist_spending), data = tourism)
+summary(lm.out.log)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = log(visitor_count_tho) ~ log(tourist_spending), 
+##     data = tourism)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.49935 -0.14620 -0.01635  0.18520  0.58194 
+## 
+## Coefficients:
+##                       Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            4.36409    0.12413   35.16   &lt;2e-16 ***
+## log(tourist_spending)  0.54839    0.01755   31.25   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2813 on 45 degrees of freedom
+## Multiple R-squared:  0.956,  Adjusted R-squared:  0.955 
+## F-statistic: 976.9 on 1 and 45 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>tourism$residual &lt;- resid(lm.out)
+tourism$residual.log &lt;- resid(lm.out.log)
+
+ggplot(tourism, aes(x = tourist_spending, y = residual)) +
+    geom_hline(yintercept = 0) +
+    geom_point()</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<pre class="r"><code>ggplot(tourism, aes(x = tourist_spending, y = residual.log)) +
+    geom_hline(yintercept = 0) +
+    geom_point()</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<pre class="r"><code>hist(tourism$residual)</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+<pre class="r"><code>ggplot(tourism, aes(x = residual)) + geom_histogram(bins = 7)</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+<pre class="r"><code>ggplot(tourism, aes(x = residual)) + geom_density()</code></pre>
+<p><img src="/blog/2021-04-21-Multiple_Linear_Regression_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+<p>Here is the R script that looks at how the F-statistic is calculated.</p>
+<pre class="r"><code>poverty &lt;- read.table(&quot;https://raw.githubusercontent.com/jbryer/DATA606Spring2021/master/course_data/poverty.txt&quot;, h = T, sep = &quot;\t&quot;)
+names(poverty) &lt;- c(&quot;state&quot;, &quot;metro_res&quot;, &quot;white&quot;, &quot;hs_grad&quot;, &quot;poverty&quot;, &quot;female_house&quot;)
+poverty &lt;- poverty[,c(1,5,2,3,4,6)]
+head(poverty)</code></pre>
+<pre><code>##        state poverty metro_res white hs_grad female_house
+## 1    Alabama    14.6      55.4  71.3    79.9         14.2
+## 2     Alaska     8.3      65.6  70.8    90.6         10.8
+## 3    Arizona    13.3      88.2  87.7    83.8         11.1
+## 4   Arkansas    18.0      52.5  81.0    80.9         12.1
+## 5 California    12.8      94.4  77.5    81.1         12.6
+## 6   Colorado     9.4      84.5  90.2    88.7          9.6</code></pre>
+<pre class="r"><code># Sample size
+n &lt;- nrow(poverty)
+# Total variance for the outcome variable
+SSy &lt;- sum((poverty$poverty - mean(poverty$poverty))^2)
+
+# Start with one predictor
+lm.out1 &lt;- lm(poverty ~ female_house, data = poverty)
+summary(lm.out1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = poverty ~ female_house, data = poverty)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.7537 -1.8252 -0.0375  1.5565  6.3285 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    3.3094     1.8970   1.745   0.0873 .  
+## female_house   0.6911     0.1599   4.322 7.53e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.664 on 49 degrees of freedom
+## Multiple R-squared:  0.276,  Adjusted R-squared:  0.2613 
+## F-statistic: 18.68 on 1 and 49 DF,  p-value: 7.534e-05</code></pre>
+<pre class="r"><code>anova(lm.out1)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: poverty
+##              Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## female_house  1 132.57 132.568  18.683 7.534e-05 ***
+## Residuals    49 347.68   7.095                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code># Note that F-statistic is the same summary(lm.out1).
+# From the ANOVA output, it is the ratio of mean square model
+# (i.e. female_house here) to mean square error/residual.
+132.568 / 7.095</code></pre>
+<pre><code>## [1] 18.68471</code></pre>
+<pre class="r"><code># However, this only works with one predictor.
+SSresid &lt;- sum(lm.out1$residuals^2)
+SSmodel &lt;- SSy - SSresid
+k &lt;- length(lm.out1$coefficients) - 1
+((SSmodel) / k) / (SSresid / (n - (k + 1)))</code></pre>
+<pre><code>## [1] 18.68348</code></pre>
+<pre class="r"><code>lm.out2 &lt;- lm(poverty ~ female_house + white, data = poverty)
+summary(lm.out2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = poverty ~ female_house + white, data = poverty)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.5245 -1.8526 -0.0381  1.3770  6.2689 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -2.57894    5.78491  -0.446 0.657743    
+## female_house  0.88689    0.24191   3.666 0.000615 ***
+## white         0.04418    0.04101   1.077 0.286755    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.659 on 48 degrees of freedom
+## Multiple R-squared:  0.2931, Adjusted R-squared:  0.2637 
+## F-statistic: 9.953 on 2 and 48 DF,  p-value: 0.0002422</code></pre>
+<pre class="r"><code>anova(lm.out2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: poverty
+##              Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## female_house  1 132.57 132.568 18.7447 7.562e-05 ***
+## white         1   8.21   8.207  1.1605    0.2868    
+## Residuals    48 339.47   7.072                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code># How is the F-Statistic calculated
+# Ho: All coefficients are zero
+# Ha: At least one coefficient is nonzero
+n &lt;- nrow(poverty)
+SSresid &lt;- sum(lm.out2$residuals^2)
+SSy &lt;- sum((poverty$poverty - mean(poverty$poverty))^2)
+SSmodel &lt;- SSy - SSresid
+k &lt;- length(lm.out2$coefficients) - 1
+((SSmodel) / k) / (SSresid / (n - (k + 1)))</code></pre>
+<pre><code>## [1] 9.952561</code></pre>

@@ -25,15 +25,23 @@ for(i in tocopy) {
 		cat(paste0('ERROR: ', i, ' did not copy!\n'))
 	}
 
-	wd <- setwd('Slides/')
-	tryCatch({
-		build_pdf(i,
-				  complex_slides = TRUE,
-				  partial_slides = FALSE)
-	}, error = function(e) {
-		cat(paste0('Error generating PDF from ', from))
-		print(e)
-	}, finally = { setwd(wd) })
+	if(tolower(tools::file_ext(from)) == 'html') {
+		pdf <- paste0(tools::file_path_sans_ext(from), '.pdf')
+
+		build_pdf <- !file.exists(pdf) | file.info(from)$mtime >	file.info(pdf)$mtime
+
+		if(build_pdf) {
+			wd <- setwd('Slides/')
+			tryCatch({
+				build_pdf(i,
+						  complex_slides = TRUE,
+						  partial_slides = FALSE)
+			}, error = function(e) {
+				cat(paste0('Error generating PDF from ', from))
+				print(e)
+			}, finally = { setwd(wd) })
+		}
+	}
 }
 wd <- setwd('website')
 blogdown::build_site(build_rmd = TRUE)
