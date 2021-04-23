@@ -1,3 +1,5 @@
+library(ggplot2)
+
 poverty <- read.table("https://raw.githubusercontent.com/jbryer/DATA606Spring2021/master/course_data/poverty.txt", h = T, sep = "\t")
 names(poverty) <- c("state", "metro_res", "white", "hs_grad", "poverty", "female_house")
 poverty <- poverty[,c(1,5,2,3,4,6)]
@@ -37,3 +39,18 @@ SSy <- sum((poverty$poverty - mean(poverty$poverty))^2)
 SSmodel <- SSy - SSresid
 k <- length(lm.out2$coefficients) - 1
 ((SSmodel) / k) / (SSresid / (n - (k + 1)))
+
+# Removing the intercept
+lm.out1.nointercept <- lm(poverty ~ female_house - 1, data = poverty)
+summary(lm.out1.nointercept)
+anova(lm.out1.nointercept)
+
+# Comparing the two models
+# F = [[SSE(R) – SSE(F)]/[df(R)-df(F)]/[SSE(F)/df(F)]
+# Where (R) refers to values from the reduced model (with fewer parameters) and (F) refers to values from the full model
+# Source: https://www.theanalysisfactor.com/regression-models-without-intercepts/
+( F <- (369.3 - 347.68) / (50 - 49) / (347.68 / 49) )
+pf(F, df1 = 1, df2 = 49)
+
+# http://people.reed.edu/~jones/Courses/P24.pdf
+anova(lm.out1, lm.out1.nointercept)
