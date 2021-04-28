@@ -1,0 +1,24 @@
+---
+title: "Intro to Shiny"
+author: "Jason Bryer"
+date: 2021-04-27
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+[Click here](https://r.bryer.org/shiny/Intro_to_Shiny/) to open the slides.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B52d5kKFpKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--more-->
+
+[Click here](https://r.bryer.org/shiny/Intro_to_Shiny/) to open the slides.
+
+[Source code for the slides and Shiny apps](https://github.com/jbryer/DATA606Spring2021/tree/master/Slides/Intro_to_Shiny)
+
+[Loess regression application](https://shiny.rit.albany.edu/stat/mod2/)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B52d5kKFpKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
