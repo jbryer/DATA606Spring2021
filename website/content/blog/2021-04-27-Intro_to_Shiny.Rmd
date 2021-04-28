@@ -14,11 +14,9 @@ tags: ["Annoucement"]
 
 <!--more-->
 
-[Click here](https://r.bryer.org/shiny/Intro_to_Shiny/) to open the slides.
-
-[Source code for the slides and Shiny apps](https://github.com/jbryer/DATA606Spring2021/tree/master/Slides/Intro_to_Shiny)
-
-[Loess regression application](https://shiny.rit.albany.edu/stat/mod2/)
+* [Click here](https://r.bryer.org/shiny/Intro_to_Shiny/) to open the slides.
+* [Source code for the slides and Shiny apps](https://github.com/jbryer/DATA606Spring2021/tree/master/Slides/Intro_to_Shiny)
+* [Loess regression application](https://r.bryer.org/shiny/Loess/)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B52d5kKFpKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
