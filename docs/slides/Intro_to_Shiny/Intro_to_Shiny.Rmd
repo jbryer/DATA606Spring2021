@@ -1,0 +1,283 @@
+---
+title: "Intro to Shiny"
+author: "Jason Bryer, Ph.D."
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation:
+    self_contained: true
+    widescreen: true
+    smaller: true
+editor_options: 
+  chunk_output_type: console
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = FALSE, warning = FALSE, message = FALSE)
+options(width = 110)
+
+library(tidyverse)
+library(shiny)
+library(DATA606)
+library(fontawesome)
+```
+
+## What is Shiny?
+
+<img src='shiny.png' alt='Shiny Hex Logo' align='right' height='175' style='padding-left:30px;' />
+
+"Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions." (shiny.rstudio.com)
+
+<br/><br/>
+
+To install:
+
+```{r, eval  = FALSE}
+install.packages('shiny')
+```
+
+# Examples
+
+----
+
+```{r, echo=FALSE, eval=TRUE}
+shinyAppDir(
+  'old_faithful/',
+  options = list(width = "100%", height = 700)
+)
+```
+
+----
+
+```{r, echo=FALSE, eval=FALSE}
+shinyAppDir(
+	system.file('shiny/distributions', package = 'DATA606'),
+	options = list(width = '100%', height = 700)
+)
+```
+
+## More Examples
+
+[RStudio Shiny Gallery](https://shiny.rstudio.com/gallery/) - Lots of great Shiny apps to get inspiration.
+
+[data.osepartnership.org](https://data.osepartnership.org) - A Shiny application built to help special educators in NYS get information about schools and school districts meeting IDEA requirements.
+
+[Linear Models with Two IVs](https://shiny.rit.albany.edu/stat/mod2/) - This application has a three dimensional plot. See other stats apps by Dr. Dudek [here](https://www.albany.edu/psychology/statistics/).
+
+# Parts of a Shiny App
+
+## Application Template
+
+```{r, eval = FALSE}
+library(shiny)
+ui <- fluidPage()
+server <- function(input, output) { }
+### <b>
+shinyApp(ui = ui, server = server)
+### </b>
+```
+
+## ui.R
+
+
+----
+
+<center><img src='shiny_inputs.png' width='85%' /></center>
+
+## Numeric Inputs
+
+```{r}
+numericInput('numeric_id', 'Numeric example', value = 42, min = 0, max = 100, step = 1)
+```
+
+```{r}
+sliderInput('slider_id', 'Slider example', min = 0, max = 100, step = 1, value = 42)
+```
+
+## Text Inputs
+
+```{r}
+textInput('text_id', 'Text example', value = 'You can type here!')
+```
+
+```{r}
+textAreaInput('textarea_id', 'Text area example', value = 'Initial text', cols = 100, rows = 3)
+```
+
+```{r}
+passwordInput('password_id', 'Password example', value = "Can't see this")
+```
+
+## Date Inputs
+
+```{r}
+dateInput('date_id', 'Date example')
+```
+
+```{r}
+dateRangeInput('daterange_id', 'Date range example')
+```
+
+## Select Inputs
+
+```{r}
+choices <- LETTERS
+names(choices) <- paste0('Brought you by the letter ', choices)
+selectInput('select_id', 'Select example', choices = choices, multiple = FALSE, width = '80%')
+```
+
+```{r}
+checkboxInput('checkbox_input', 'Checkbox example', value = FALSE)
+```
+
+```{r}
+checkboxGroupInput('checkboxgroup_id', 'Checkbox group example', choices = LETTERS[1:3])
+```
+
+## Buttons
+
+```{r}
+submitButton('Submit Button')
+```
+
+```{r}
+actionButton('action_id', 'Action Button')
+```
+
+## Formatting Text
+
+Shiny Function  | HTML Equivalent  | Creates
+----------------|------------------|--------------------------------------------
+`p`             | `<p> `           | A paragraph of text
+`h1`            | `<h1>`           | A first level header
+`h2`            | `<h2>`           | A second level header
+`h3`            | `<h3>`           | A third level header
+`h4`            | `<h4>`           | A fourth level header
+`h5`            | `<h5>`           | A fifth level header
+`h6`            | `<h6>`           | A sixth level header
+`a`             | `<a>`            | A hyper link (need `href` parameter)  
+`br`            | `<br>`           | A line break
+`div`           | `<div>`          | A division of text with a uniform style
+`pre`           | `<pre>`          | Unformatted text
+`code`          | `<code>`         | A formatted block of code
+`img`           | `<img>`          | An image (need `src` parameter)
+`strong`        | `<strong>`       | Bold text
+`em`            | `<em>`           | Italicized text
+`HTML`          |                  | HTML code passed directly to the browser
+
+## Outputs
+
+----
+
+<center><img src='shiny_outputs.png' width='100%' /></center>
+
+
+## server.R
+
+```{r}
+ls('package:shiny')[grep('^render', ls('package:shiny'))]
+```
+
+## global.R (optional)
+
+
+# Reactive Programming
+
+##
+
+
+# Demo
+
+## Getting Started
+
+```{r, eval=FALSE}
+df <- tibble(
+	x = seq(-1, 1, by = 0.01),
+	y = x^3 + rnorm(length(x), mean = 0, sd = 0.05) - x
+)
+
+loess.out <- loess(y ~ x, data = df, degree = 1, 
+### <b style='color:blue !important;'>
+                   span = .5)
+### </b>
+df <- df %>% mutate(fitted = fitted(loess.out))
+
+df.points <- df %>%
+	mutate(dist = abs(x - -0.2)) %>%
+	filter(rank(dist) / n() <= .5) %>%
+	mutate(weight = (1 - (dist / max(dist)) ^ 3) ^ 3)
+
+ggplot(df.points, aes(x = x, y = y)) +
+	geom_vline(xintercept = center, linetype = 2) +
+	geom_point(data = df, alpha = 0.5, shape = 1) +
+	geom_point(aes( color = weight)) +
+	geom_smooth(method = 'lm', formula = y ~ x, aes(weight = weight),
+				se = FALSE, color = 'blue', size = 0.5) +
+	scale_color_gradient2(low = '#ece7f2', high = '#2b8cbe') +
+	geom_line(data = df, aes(y = fitted), color = 'black', size = 0.5)
+```
+
+
+# Resources
+
+## Deploying Shiny Apps
+
+[Deploying Shiny Server on Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-16-04) tutorial.
+
+[Deploying Shiny Server on Amazon AWS](https://towardsdatascience.com/how-to-host-a-r-shiny-app-on-aws-cloud-in-7-simple-steps-5595e7885722)
+
+[Framework for Shiny Apps in R Packages](https://bryer.org/post/2021-02-12-shiny_apps_in_r_packages/)
+
+
+## Supplemental Packages
+
+* [shinythemes](https://github.com/rstudio/shinythemes) - Bootswatch themes (Bootstrap 3) for Shiny
+
+* [shinydashboard](https://github.com/rstudio/shinydashboard) - Shiny dashboarding framework based on AdminLTE 2
+
+* [shinyWidgets](https://github.com/dreamRs/shinyWidgets) - Bootstrap 3 custom widgets for Shiny
+
+* [DT](https://github.com/rstudio/DT) - An R interface to the DataTables library
+
+* [DTedit](https://github.com/jbryer/DTedit) - Editable DataTables for shiny apps
+
+* [fontawesome](https://github.com/rstudio/fontawesome) - R package makes it very easy to insert Font Awesome icons into R Markdown documents and Shiny apps
+
+* [leaflet](https://github.com/rstudio/leaflet) - An R Interface to Leaflet Maps
+
+See [Awesome Shiny Extensions](https://github.com/nanxstats/awesome-shiny-extensions) page for a comprehensive list of addon packages.
+
+
+## Additional Resources
+
+[Rstudio Shiny Website](https://shiny.rstudio.com) includes [reference documentation](https://shiny.rstudio.com), [gallery of apps](https://shiny.rstudio.com/gallery/), and [articles](https://shiny.rstudio.com/articles/) to get started.
+
+[Mastering Shiny](https://mastering-shiny.org/) by Hadley Wickham book.
+
+[Shiny Cheat Sheet](https://shiny.rstudio.com/articles/cheatsheet.html)
+
+
+## Thank You!
+
+You'll be able to download this presentation later from [spring2021.data606.net](https://spring2021.data606.net).
+
+
+`r fa('envelope')` [jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)
+
+`r fa('link')` [bryer.org](https://bryer.org)
+
+`r fa('twitter')` [\@jbryer](https://twitter.com/jbryer)
+
+`r fa('github')` [Github](https://github.com/jbryer)
+
+
+
+
+
+
+
+
+
+
+
+

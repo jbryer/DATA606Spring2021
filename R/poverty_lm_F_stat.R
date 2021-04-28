@@ -41,6 +41,7 @@ k <- length(lm.out2$coefficients) - 1
 ((SSmodel) / k) / (SSresid / (n - (k + 1)))
 
 # Removing the intercept
+# https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-why-are-r2-and-f-so-large-for-models-without-a-constant/
 lm.out1.nointercept <- lm(poverty ~ female_house - 1, data = poverty)
 summary(lm.out1.nointercept)
 anova(lm.out1.nointercept)
