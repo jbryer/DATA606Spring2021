@@ -2,7 +2,7 @@
 {{- if .Site.Home.Content -}}
 {{- .Site.Home.Content -}}
 {{- partial "pagination.html" . -}}
-{{- range ( where site.RegularPages.ByDate.Reverse "Section" "blog" | first 10 ) -}}
+{{- range ( where site.RegularPages.ByDate.Reverse "Section" "blog" | first 100 ) -}}
 {{ .Render "summary"}}
 {{- end -}}
 {{- partial "edit-meta.html" . -}}
