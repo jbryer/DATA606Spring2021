@@ -1,0 +1,32 @@
+---
+title: "Maximum Likelihood Estimation and Logistic Regression"
+author: "Jason Bryer"
+date: 2021-04-28
+draft: false
+categories: ["R", "Meetups", "Announcements"]
+tags: ["Annoucement"]
+#summary: Recording and slides from the class meetup.
+---
+
+[Click here](/slides/09-Logistic_Regression.html#1) to open the slides. [Visual MLE Shiny app](https://r.bryer.org/shiny/visualMLE/)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qhmJ4_CuiAI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--more-->
+
+[Click here](/slides/09-Logistic_Regression.html#1) to open the slides.
+
+To run the MLE shiny app, you need to first install the `visualMLE` package:
+
+```{r, eval=FALSE}
+remotes::install_github('jbryer/visualMLE')
+```
+
+Then run this function:
+
+```{r, eval=FALSE}
+visualMLE::shiny_mle()
+```
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qhmJ4_CuiAI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
