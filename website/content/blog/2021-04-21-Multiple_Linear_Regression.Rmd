@@ -8,13 +8,13 @@ tags: ["Annoucement"]
 #summary: Recording and slides from the class meetup.
 ---
 
-[Click here](/slides/09-Multiple_Linear_Regression.html#1) to open the slides.
+[Click here](/slides/09-Multiple_Regression.html#1) to open the slides.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/e27sxMFHzKM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!--more-->
 
-[Click here](/slides/09-Multiple_Linear_Regression.html#1) to open the slides.
+[Click here](/slides/09-Multiple_Regression.html#1) to open the slides.
 
 [Shiny app to visualize interactions, simple main effects, simple slopes and model surfaces in 2-IV linear models](https://shiny.rit.albany.edu/stat/mod2/)
 
