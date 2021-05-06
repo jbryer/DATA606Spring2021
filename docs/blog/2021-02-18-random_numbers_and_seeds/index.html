@@ -18,7 +18,7 @@
 </style>
 <meta property="og:title" content="Random Numbers and Seeds in R" />
 <meta property="og:description" content="To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] 1.361548 rnorm(n = 1) ## [1] 0.1153816 Each time you run the command you will get a different number." />
+rnorm(n = 1) ## [1] 1.865954 rnorm(n = 1) ## [1] -1.0037 Each time you run the command you will get a different number." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/2021-02-18-random_numbers_and_seeds/" />
 <meta property="og:image" content="/images/og-image.png"/>
@@ -29,10 +29,10 @@ rnorm(n = 1) ## [1] 1.361548 rnorm(n = 1) ## [1] 0.1153816 Each time you run the
 
 <meta name="twitter:title" content="Random Numbers and Seeds in R"/>
 <meta name="twitter:description" content="To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] 1.361548 rnorm(n = 1) ## [1] 0.1153816 Each time you run the command you will get a different number."/>
+rnorm(n = 1) ## [1] 1.865954 rnorm(n = 1) ## [1] -1.0037 Each time you run the command you will get a different number."/>
 <meta itemprop="name" content="Random Numbers and Seeds in R">
 <meta itemprop="description" content="To explore how R generates random numbers, we will use the rnorm function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the mean and sd parameters). With n = 1 we will get one random number.
-rnorm(n = 1) ## [1] 1.361548 rnorm(n = 1) ## [1] 0.1153816 Each time you run the command you will get a different number.">
+rnorm(n = 1) ## [1] 1.865954 rnorm(n = 1) ## [1] -1.0037 Each time you run the command you will get a different number.">
 <meta itemprop="datePublished" content="2021-02-18T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-18T00:00:00+00:00" />
 <meta itemprop="wordCount" content="247">
@@ -80,9 +80,9 @@ rnorm(n = 1) ## [1] 1.361548 rnorm(n = 1) ## [1] 0.1153816 Each time you run the
 
 <p>To explore how R generates random numbers, we will use the <code>rnorm</code> function. This function draws a random number from a normal distribution with a mean = 0 and standard deviation = 1 (though these can be changed with the <code>mean</code> and <code>sd</code> parameters). With <code>n = 1</code> we will get one random number.</p>
 <pre class="r"><code>rnorm(n = 1)</code></pre>
-<pre><code>## [1] 1.361548</code></pre>
+<pre><code>## [1] 1.865954</code></pre>
 <pre class="r"><code>rnorm(n = 1)</code></pre>
-<pre><code>## [1] 0.1153816</code></pre>
+<pre><code>## [1] -1.0037</code></pre>
 <p>Each time you run the command you will get a different number. The <code>set.seed</code> function will sets a seed to the random number generator so that each subsequent run will produce the same number.</p>
 <pre class="r"><code>set.seed(2112); rnorm(n = 1)</code></pre>
 <pre><code>## [1] 0.9243372</code></pre>
