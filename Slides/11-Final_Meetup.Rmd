@@ -1,0 +1,129 @@
+---
+title: "Final Meetup"
+subtitle: "DATA 606 - Statistics & Probability for Data Analytics"
+author: Jason Bryer, Ph.D.
+date: "May 12, 2021"
+output:
+  xaringan::moon_reader:
+    css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: R
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+    includes:
+      in_header: [assets/header.html]
+      after_body: [assets/insert-logo.html]
+params:
+  github_link: "DATA606Spring2021"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+# remotes::install_github("gadenbuie/countdown")
+# remotes::install_github("mitchelloharawild/icon")
+# icon::download_fontawesome()
+# devtools::install_github("thomasp85/patchwork")
+
+library(knitr)
+library(tidyverse)
+library(countdown)
+library(likert)
+library(fontawesome)
+
+opts_chunk$set(digits = 3)
+
+# This style was adapted from Max Kuhn: https://github.com/rstudio-conf-2020/applied-ml
+# And Rstudio::conf 2020: https://github.com/rstudio-conf-2020/slide-templates/tree/master/xaringan
+# This slide deck shows a lot of the features of Xaringan: https://www.kirenz.com/slides/xaringan-demo-slides.html
+
+# To use, add this to the slide title:   `r I(hexes(c("DATA606")))`
+# It will use images in the images/hex_stickers directory (i.e. the filename is the paramter)
+hexes <- function(x) {
+  x <- rev(sort(x))
+  markup <- function(pkg) glue::glue('<img src="images/hex/{pkg}.png" class="title-hex">')
+  res <- purrr::map_chr(x, markup)
+  paste0(res, collapse = "")
+}
+```
+
+
+# Final Exam
+
+* Will be available May 19th.
+
+* Due by end of day May 23rd.
+
+* You may use your book and course materials.
+
+* I expect you to complete the exam on your own (i.e. do not discuss with classmates, colleagues, significant others, etc.)
+
+* There are two parts:
+	1. Part one multiple choice questions and short answer questions.
+	2. Part two has a small data set to analyze with R, then answer some interpretation questions.
+
+* Put your answers in the Rmarkdown file and submit the PDF file. **Please do not post your answers online!**
+
+
+---
+# Presentations
+
+* 8.24 - Peter Gatica
+* 5.13 - Rathish Sasidharan
+* Zachary Safir
+
+---
+# My Work
+
+My statistical research interest is in propensity score methods. Propensity score analysis (PSA) is a quasi-experimental design used to estimate causality from observational studies. It is generally conducted in two phases:
+
+1. Estimate propensity scores (i.e. probability of being in the treatment) using the observed covariates.
+	a. Check balance
+	b. Re-estimate propensity scores
+2. Estimate effect sizes using typical group differences (e.g. t-tests)
+
+See my [Github repository](https://github.com/jbryer/psa) or [Intro to PSA slides](http://epsy887.bryer.org/slides/Intro_PSA.html). Also the PSA Shiny application:
+
+```{r, eval=FALSE}
+psa::psa_shiny()
+```
+
+Areas I have worked on:
+
+* Multilevel PSA (see [`multilevelPSA`](http://jason.bryer.org/multilevelPSA) R package)
+* Matching with non-binary treatments (see [`TriMatch`](http://jason.bryer.org/TriMatch) R package)
+* Bootstrapping PSA (see [`PSAboot`](http://jason.bryer.org/PSAboot) R package)
+
+---
+# DAACS
+
+[The Diagnostic Assessment and Achievement of College Skills](https://daacs.net) (DAACS) is a suite of technological and social supports to optimize student learning. DAACS  provides personalized feedback about students’ strengths and weaknesses in  terms of key academic and self-regulated learning skills, linking them to the resources to help them be successful students.
+
+Applications of Data Science:
+
+* We use natural language processing and predictive models to machine score the essays.
+* We use DAACS data to estimate "risk scores" for students failing so we can target them with resources to help them be successful.
+
+Just learned we received $3.8 million grant from the Institute of Education Sciences to test the efficacy at three institutions. Official announcement to come in July.
+
+
+---
+# Thank You
+
+This has been a great semester. Please don't hesitate to reach out:
+
+`r fa('envelope')` Email: [jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)
+`r fa('github')` Github: https://github.com/jbryer
+`r fa('link')` Personal Website: https://bryer.org
+`r fa('linkedin')` [LinkedIn](https://www.linkedin.com/profile/view?id=AAMAAATGdnoBOWXg80yqna6fSkgnZdabZP7Ck9w&trk=hp-identity-name)
+`r fa('twitter')` Twitter: [jbryer](https://twitter.com/jbryer)
+
+<br/>
+
+You can download all course materials on [Github](https://github.com/jbryer/DATA606Spring2021). Click the [clone or download](https://github.com/jbryer/DATA606Spring2021/archive/master.zip) link to download a zip file.
+
